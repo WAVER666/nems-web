@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Nemukula Attorneys Inc.</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+    <header id="header" class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="nav-logo"><img src="assets/images/Logo.png" alt="Nemukula Attorneys Inc. Logo"></a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="practice-areas.html" class="nav-link">Practice Areas</a></li>
+                <li class="nav-item"><a href="team.html" class="nav-link">Our Team</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Contact Us</h1>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section">
+            <div class="container" data-aos="fade-up">
+                <div class="contact-wrapper">
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Your Email" required>
+                            </div>
+                             <div class="form-group">
+                                <input type="text" name="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+                        <p>We are here to help. Reach out to us for a consultation.</p>
+                        <a href="https://wa.me/27672328339" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+                            <i data-feather="message-circle"></i> Start WhatsApp Consultation
+                        </a>
+                        <p><i data-feather="map-pin"></i> <strong>Office Address:</strong><br>34 Thwane Street, Kalafong Heights,<br>Attridgeville, 0006</p>
+                        <p><i data-feather="phone"></i> 076 573 9838</p>
+                        <p><i data-feather="phone"></i> 067 232 8339</p>
+                        <p><i data-feather="mail"></i> thuso@nemukula.co.za</p>
+                        <p><i data-feather="mail"></i> info@nemukula.co.za</p>
+                        <p><i data-feather="clock"></i> <strong>Working Hours:</strong><br>Mon - Fri: 8:00 AM - 5:00 PM<br>Sat: 9:00 AM - 1:00 PM</p>
+                    </div>
+                </div>
+                 <div class="map-container" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Our Locations</h3>
+                    <iframe title="Google Maps Location of Nemukula Attorneys Inc. Office" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.4502366663167!2d28.0394491!3d-25.7784799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95a0f0f003a39d%3A0x5b5a49f6e5b44a4!2s34%20Thwane%20St%2C%20Kalafong%20Heights%2C%20Pretoria%2C%200001!5e0!3m2!1sen!2sza!4v1697633271247!5m2!1sen!2sza" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Nemukula Attorneys Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="js/script.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+        feather.replace();
+    </script>
+</body>
+</html>
