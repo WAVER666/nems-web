@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Sitemap: https://nemukula.co.za/sitemap.xml
+
+Disallow: /assets/
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /css/
+Disallow: /js/

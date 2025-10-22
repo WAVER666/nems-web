@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book a Consultation - Nemukula Attorneys Inc.</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/booking.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
@@ -13,11 +14,16 @@
 <body>
     <header id="header" class="header">
         <nav class="navbar container">
-            <a href="index.html" class="nav-logo"><img src="assets/images/Logo.png" alt="Nemukula Attorneys Inc. Logo"></a>
+            <a href="index.html" class="nav-logo">
+                <img src="assets/Logo.png" alt="Nemukula Attorneys Inc. Logo">
+                <span class="logo-text">Nemukula Attorneys Inc</span>
+            </a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
                 <li class="nav-item"><a href="practice-areas.html" class="nav-link">Practice Areas</a></li>
                 <li class="nav-item"><a href="team.html" class="nav-link">Our Team</a></li>
+                <li class="nav-item"><a href="careers.html" class="nav-link">Careers</a></li>
+                <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
                 <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a href="client-portal.html" class="nav-link">Client Portal</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
@@ -34,26 +40,41 @@
         <section class="page-header">
             <div class="container">
                 <h1>Book a Consultation</h1>
+                <p class="slogan">Expert Legal Guidance at Your Convenience</p>
             </div>
         </section>
 
         <section class="content-section">
             <div class="container" data-aos="fade-up">
                 <div class="booking-wrapper">
-                    <div class="booking-form">
+                    <div class="booking-form" data-aos="fade-right">
                         <h3>Schedule Your Consultation</h3>
-                        <form id="consultationForm">
-                            <div class="form-group">
-                                <input type="text" name="name" placeholder="Full Name" required>
+                        <form id="consultationForm" action="mailto:thuso@nemukula.co.za,info@nemukula.co.za" method="post" enctype="text/plain">
+                            <div class="form-group" data-aos="fade-up" data-aos-delay="100">
+                                <label for="name" class="required-field">Full Name</label>
+                                <input type="text" name="name" id="name" required 
+                                    placeholder="Enter your full name" 
+                                    pattern="[A-Za-z .]+" 
+                                    title="Please enter a valid name (letters and spaces only)">
                             </div>
-                            <div class="form-group">
-                                <input type="email" name="email" placeholder="Email Address" required>
+                            
+                            <div class="form-group" data-aos="fade-up" data-aos-delay="150">
+                                <label for="email" class="required-field">Email Address</label>
+                                <input type="email" name="email" id="email" required 
+                                    placeholder="Enter your email address">
                             </div>
-                            <div class="form-group">
-                                <input type="tel" name="phone" placeholder="Phone Number" required>
+                            
+                            <div class="form-group" data-aos="fade-up" data-aos-delay="200">
+                                <label for="phone" class="required-field">Phone Number</label>
+                                <input type="tel" name="phone" id="phone" required 
+                                    placeholder="Enter your phone number"
+                                    pattern="[0-9+ -]+"
+                                    title="Please enter a valid phone number">
                             </div>
-                            <div class="form-group">
-                                <select name="practiceArea" required>
+                            
+                            <div class="form-group" data-aos="fade-up" data-aos-delay="250">
+                                <label for="practiceArea" class="required-field">Practice Area</label>
+                                <select name="practiceArea" id="practiceArea" required>
                                     <option value="">Select Practice Area</option>
                                     <option value="corporate">Corporate & Commercial Law</option>
                                     <option value="family">Family Law</option>
@@ -64,39 +85,64 @@
                                     <option value="raf">Road Accident Fund Claims</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <input type="date" name="preferredDate" required>
+                            
+                            <div class="form-group" data-aos="fade-up" data-aos-delay="300">
+                                <label for="preferredDate" class="required-field">Preferred Date</label>
+                                <input type="date" name="preferredDate" id="preferredDate" required
+                                    min="" 
+                                    title="Choose your preferred consultation date">
                             </div>
-                            <div class="form-group">
-                                <select name="preferredTime" required>
-                                    <option value="">Preferred Time</option>
+                            
+                            <div class="form-group" data-aos="fade-up" data-aos-delay="350">
+                                <label for="preferredTime" class="required-field">Preferred Time</label>
+                                <select name="preferredTime" id="preferredTime" required>
+                                    <option value="">Select Preferred Time</option>
                                     <option value="morning">Morning (9:00 - 12:00)</option>
                                     <option value="afternoon">Afternoon (12:00 - 3:00)</option>
                                     <option value="evening">Late Afternoon (3:00 - 5:00)</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <textarea name="caseDetails" rows="5" placeholder="Brief description of your case" required></textarea>
+                            
+                            <div class="form-group" data-aos="fade-up" data-aos-delay="400">
+                                <label for="caseDetails" class="required-field">Case Details</label>
+                                <textarea name="caseDetails" id="caseDetails" rows="5" required
+                                    placeholder="Please provide a brief description of your case"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Request Consultation</button>
+                            
+                            <button type="submit" class="btn-submit" data-aos="fade-up" data-aos-delay="450">
+                                <i data-feather="calendar"></i>
+                                Request Consultation
+                            </button>
                         </form>
+                        <div id="successMessage" class="success-message">
+                            Thank you for your request. We will contact you shortly to confirm your consultation.
+                        </div>
                     </div>
-                    <div class="booking-info">
+                    
+                    <div class="booking-info" data-aos="fade-left">
                         <h3>What to Expect</h3>
-                        <div class="info-card">
+                        <div class="info-card" data-aos="fade-up" data-aos-delay="100">
                             <i data-feather="clock"></i>
-                            <h4>Duration</h4>
-                            <p>Initial consultations typically last 30-45 minutes</p>
+                            <h4>Consultation Duration</h4>
+                            <p>Initial consultations typically last 30-45 minutes, allowing sufficient time to discuss your case in detail.</p>
                         </div>
-                        <div class="info-card">
+                        
+                        <div class="info-card" data-aos="fade-up" data-aos-delay="200">
                             <i data-feather="file-text"></i>
-                            <h4>Documents</h4>
-                            <p>Please bring any relevant documents related to your case</p>
+                            <h4>Required Documents</h4>
+                            <p>Please bring any relevant documents related to your case, including contracts, correspondence, or official papers.</p>
                         </div>
-                        <div class="info-card">
+                        
+                        <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+                            <i data-feather="shield"></i>
+                            <h4>Confidentiality</h4>
+                            <p>Your consultation is completely confidential and protected by attorney-client privilege.</p>
+                        </div>
+                        
+                        <div class="info-card" data-aos="fade-up" data-aos-delay="400">
                             <i data-feather="dollar-sign"></i>
                             <h4>Consultation Fee</h4>
-                            <p>We'll discuss our fee structure during the consultation</p>
+                            <p>We'll discuss our fee structure during the consultation. Initial consultation fees may apply depending on your case type.</p>
                         </div>
                     </div>
                 </div>
@@ -119,6 +165,64 @@
             once: true,
         });
         feather.replace();
+
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('preferredDate').min = today;
+
+        // Form handling
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            const formData = new FormData(this);
+            let emailBody = '';
+
+            // Build email body with form data
+            for (let [key, value] of formData.entries()) {
+                emailBody += `${key}: ${value}\n`;
+            }
+
+            // Set the email body
+            this.action = `mailto:thuso@nemukula.co.za,info@nemukula.co.za?subject=Consultation Request&body=${encodeURIComponent(emailBody)}`;
+
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+
+            // Scroll to success message
+            setTimeout(() => {
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        });
+
+        // Real-time form validation
+        const form = document.getElementById('consultationForm');
+        const inputs = form.querySelectorAll('input, select, textarea');
+
+        inputs.forEach(input => {
+            input.addEventListener('input', function() {
+                if (this.checkValidity()) {
+                    this.classList.remove('invalid');
+                    this.classList.add('valid');
+                } else {
+                    this.classList.remove('valid');
+                    this.classList.add('invalid');
+                }
+            });
+        });
+
+        // Phone number formatting
+        const phoneInput = document.getElementById('phone');
+        phoneInput.addEventListener('input', function(e) {
+            let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+            e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+        });
+
+        // Prevent form submission on Enter key
+        form.addEventListener('keypress', function(e) {
+            if (e.keyCode === 13 || e.which === 13) {
+                e.preventDefault();
+                return false;
+            }
+        });
     </script>
 </body>
 </html>

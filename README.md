@@ -12,8 +12,13 @@ nemukula-inc-website
 │   └── style.css      # Styles for the website
 ├── js
 │   └── script.js      # JavaScript for interactivity and dynamic behavior
-├── index.html         # Main HTML file for the website
-└── README.md          # Documentation for the project
+├── index.html         # Home page
+├── about.html         # About Us page
+├── practice-areas.html # Details on legal services
+├── team.html          # Page for the firm's attorneys
+├── contact.html       # Contact page with form and details
+├── book-consultation.html # Form to schedule a consultation
+└── README.md          # This documentation file
 ```
 
 ## Setup Instructions

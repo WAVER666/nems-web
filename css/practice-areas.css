@@ -1,0 +1,184 @@
+/* Practice Areas Styles */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    padding: var(--spacing-xl) 0;
+}
+
+.service-card {
+    background: var(--color-background);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--color-primary) 0%,
+        var(--color-accent) 100%
+    );
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--color-primary-rgb), 0.1);
+    border-radius: 50%;
+    margin-bottom: var(--spacing-lg);
+    transition: var(--transition-base);
+}
+
+.service-card:hover .service-icon {
+    transform: rotateY(360deg);
+    background: var(--color-primary);
+}
+
+.service-icon i {
+    width: 32px;
+    height: 32px;
+    color: var(--color-primary);
+    transition: var(--transition-base);
+}
+
+.service-card:hover .service-icon i {
+    color: var(--color-text-light);
+}
+
+.service-card h3 {
+    color: var(--color-text);
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-base);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    justify-content: center;
+}
+
+.practice-number {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1.1em;
+    opacity: 0.8;
+    transition: var(--transition-base);
+}
+
+.service-card:hover .practice-number {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.service-card p {
+    color: var(--color-text-muted);
+    line-height: var(--line-height-loose);
+    margin: 0;
+    transition: var(--transition-base);
+}
+
+.service-card:hover p {
+    color: var(--color-text);
+}
+
+/* Card Hover Effect */
+.service-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, 
+        rgba(var(--color-primary-rgb), 0.1) 0%,
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-card:hover::after {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        padding: var(--spacing-lg) 0;
+    }
+
+    .service-card {
+        padding: var(--spacing-lg);
+    }
+
+    .service-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .service-icon i {
+        width: 28px;
+        height: 28px;
+    }
+
+    .service-card h3 {
+        font-size: var(--font-size-lg);
+    }
+}
+
+/* Animation Classes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-scaleIn {
+    animation: scaleIn 0.5s ease forwards;
+}

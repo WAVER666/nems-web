@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Secure client portal for Nemukula Attorneys Inc. Access your case information and documents.">
+    <title>Client Portal - Nemukula Attorneys Inc.</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header id="header" class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/Logo.png" alt="Nemukula Attorneys Inc. Logo">
+                <span class="logo-text">Nemukula Attorneys Inc</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="practice-areas.html" class="nav-link">Practice Areas</a></li>
+                <li class="nav-item"><a href="team.html" class="nav-link">Our Team</a></li>
+                <li class="nav-item"><a href="careers.html" class="nav-link">Careers</a></li>
+                <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="client-portal.html" class="nav-link">Client Portal</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="header-overlay"></div>
+            <div class="container">
+                <h1>Client Portal</h1>
+                <p class="header-subtitle">Secure Access to Your Case Information</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container" data-aos="fade-up">
+                <div class="portal-section">
+                    <div class="portal-login">
+                        <div class="login-box">
+                            <h2><i data-feather="lock" class="portal-icon"></i>Client Login</h2>
+                            <form class="login-form" action="#" method="POST">
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" name="password" required>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Login to Portal</button>
+                                </div>
+                                <div class="form-links">
+                                    <a href="#" class="forgot-password">Forgot Password?</a>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="portal-info">
+                            <h3>Portal Features</h3>
+                            <ul class="features-list">
+                                <li><i data-feather="file-text"></i>Access Case Documents</li>
+                                <li><i data-feather="calendar"></i>View Appointments</li>
+                                <li><i data-feather="message-square"></i>Secure Messaging</li>
+                                <li><i data-feather="credit-card"></i>Payment History</li>
+                            </ul>
+                            <div class="portal-help">
+                                <p>Need help accessing your account?</p>
+                                <a href="mailto:info@nemukula.co.za" class="btn">Contact Support</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Nemukula Attorneys Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore-compat.js"></script>
+    
+    <!-- Your Scripts -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="js/script.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+        feather.replace();
+    </script>
+</body>
+</html>
