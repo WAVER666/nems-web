@@ -1,0 +1,252 @@
+/* Contact Section Styles */
+:root {
+    --transition-standard: all 0.3s ease;
+    --shadow-elevation-1: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-elevation-2: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --shadow-elevation-3: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+}
+
+/* Accessibility */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Form Styles */
+.contact-form {
+    background: var(--color-background);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-elevation-1);
+    transition: var(--transition-standard);
+}
+
+.contact-form:hover {
+    box-shadow: var(--shadow-elevation-2);
+    transform: translateY(-5px);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: var(--spacing-base);
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+    background: var(--color-background);
+    font-family: var(--font-primary);
+    transition: var(--transition-standard);
+    transform: translateY(0);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+    transform: translateY(-2px);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--color-text-muted);
+    transition: opacity 0.3s ease;
+}
+
+.form-group input:focus::placeholder,
+.form-group textarea:focus::placeholder {
+    opacity: 0.7;
+}
+
+/* Contact Info Styles */
+.contact-info {
+    background: var(--color-background);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-elevation-1);
+    transition: var(--transition-standard);
+}
+
+.contact-info:hover {
+    box-shadow: var(--shadow-elevation-2);
+    transform: translateY(-5px);
+}
+
+.contact-info h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    padding-bottom: var(--spacing-base);
+}
+
+.contact-info h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--color-primary);
+    transition: width 0.3s ease;
+}
+
+.contact-info h3:hover::after {
+    width: 100%;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-base);
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-base);
+    border-radius: var(--border-radius);
+    transition: var(--transition-standard);
+}
+
+.info-item:hover {
+    background: rgba(var(--color-primary-rgb), 0.05);
+    transform: translateX(5px);
+}
+
+.info-item i {
+    color: var(--color-primary);
+    min-width: 24px;
+    margin-top: 3px;
+}
+
+.info-item div {
+    flex: 1;
+}
+
+.info-item strong {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text);
+}
+
+.info-item a,
+.info-item div {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: var(--transition-standard);
+}
+
+.info-item a:hover {
+    color: var(--color-primary);
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    background: #25D366;
+    color: white;
+    padding: var(--spacing-base) var(--spacing-xl);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    margin-top: var(--spacing-lg);
+    gap: var(--spacing-base);
+    transition: var(--transition-standard);
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    animation: none;
+}
+
+/* Button Styles */
+.btn-primary {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-base);
+    padding: var(--spacing-base) var(--spacing-xl);
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-standard);
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.3);
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .contact-form,
+    .contact-info {
+        padding: var(--spacing-lg);
+    }
+
+    .whatsapp-button {
+        width: 100%;
+        justify-content: center;
+    }
+}

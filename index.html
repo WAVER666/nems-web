@@ -2,49 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="theme-color" content="#691121">
-    <meta name="description" content="Nemukula Attorneys Inc. - A leading South African law firm providing expert legal services in corporate law, family law, criminal defense, and more. Excellence in legal representation since 2025.">
-    <meta name="keywords" content="law firm, attorneys, legal services, South Africa, Nemukula, corporate law, family law, criminal defense, legal consultation, Pretoria lawyers, RAF claims">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nemukula Attorneys Inc. - Leading South African law firm delivering excellence in legal services. Specialists in corporate law, family law, and more.">
+    <meta name="keywords" content="law firm, attorneys, legal services, South Africa, Nemukula, corporate law, family law, RAF claims">
     <meta name="author" content="Nemukula Attorneys Inc.">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
-    <meta name="theme-color" content="#691121">
-    
+    <meta name="theme-color" content="#1a1a1a">
+
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Nemukula Attorneys Inc. - Justice, Integrity, Excellence">
-    <meta property="og:description" content="Expert legal services with a commitment to justice, integrity, and excellence. Serving South Africa with comprehensive legal solutions.">
-    <meta property="og:image" content="https://nemukula.co.za/assets/Logo.png">
+    <meta property="og:title" content="Nemukula Attorneys | Excellence in Legal Practice">
+    <meta property="og:description" content="Leading South African law firm delivering excellence in legal services. Specialists in corporate law, family law, and more.">
+    <meta property="og:image" content="https://nemukula.co.za/assets/images/social-preview.jpg">
     <meta property="og:url" content="https://nemukula.co.za">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_ZA">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nemukula Attorneys Inc.">
-    <meta name="twitter:description" content="Expert legal services with a commitment to justice, integrity, and excellence in South Africa.">
-    <meta name="twitter:image" content="https://nemukula.co.za/assets/Logo.png">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/manifest.json">
-    
-    <title>Nemukula Attorneys Inc. - Justice, Integrity, Excellence</title>
-    <link rel="stylesheet" href="/rid-nems-webie/css/vendor-prefixes.css">
-    <link rel="stylesheet" href="/rid-nems-webie/css/style.css">
-    <link rel="stylesheet" href="/rid-nems-webie/css/home.css">
-    <link rel="stylesheet" href="/rid-nems-webie/css/practice-areas.css">
-    <link rel="stylesheet" href="/rid-nems-webie/css/hamburger.css">
+
+    <title>Nemukula Attorneys | Excellence in Legal Practice</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/about-section.css">
+    <link rel="stylesheet" href="css/contact-section.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -65,56 +55,89 @@
 <body>
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
 
-    <header id="header" class="header" role="banner">
+    <header class="header" role="banner">
         <nav class="navbar container" role="navigation" aria-label="Main navigation">
             <a href="index.html" class="nav-logo" aria-label="Home">
-                <img src="/rid-nems-webie/assets/Logo.png" alt="Nemukula Attorneys Inc. Logo" loading="lazy">
+                <img src="assets/Logo.png" alt="Nemukula Attorneys Inc. Logo" loading="lazy">
                 <span class="logo-text">Nemukula Attorneys Inc</span>
             </a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
-                <li class="nav-item"><a href="practice-areas.html" class="nav-link">Practice Areas</a></li>
-                <li class="nav-item"><a href="team.html" class="nav-link">Our Team</a></li>
-                <li class="nav-item"><a href="careers.html" class="nav-link">Careers</a></li>
-                <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="client-portal.html" class="nav-link">Client Portal</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
             <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#expertise" class="nav-link">Expertise</a></li>
+                <li class="nav-item"><a href="#team" class="nav-link">Our Team</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="client-portal.html" class="nav-link">Client Portal</a></li>
+            </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="home" class="hero-section">
-            <video class="hero-video" autoplay muted loop playsinline>
+    <div class="page-background"></div>
+    <div class="page-overlay"></div>
+    
+    <main id="main-content">
+        <section class="hero-section">
+            <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/hero-bg.jpg">
                 <source src="assets/her.mp4" type="video/mp4">
+                <!-- Fallback for browsers that don't support video -->
+                <img src="assets/hero-bg.jpg" alt="Nemukula Attorneys Hero Image">
             </video>
             <div class="hero-overlay"></div>
-            <div class="hero-content animate-fadeInUp" data-aos="fade-in" data-aos-delay="300">
-                <h1 class="hero-title">Justice, Integrity, Excellence</h1>
-                <p class="hero-subtitle">Your trusted legal partners, dedicated to achieving the best possible outcomes.</p>
-                <p class="slogan">The Best For Your Rights</p>
-                <a href="#contact" class="btn btn-primary animate-scaleIn">Request a Consultation</a>
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <h1 class="hero-title" data-aos="fade-up" data-aos-duration="1200">Legal Excellence & Integrity</h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">South Africa's trusted legal partner, delivering exceptional results with unwavering commitment to justice.</p>
+                <p class="slogan" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500">Defending Your Rights, Protecting Your Future</p>
+                <div class="hero-cta" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Schedule Consultation</span>
+                        <i data-feather="arrow-right"></i>
+                    </a>
+                    <a href="#services" class="btn btn-outline">
+                        <span>Explore Services</span>
+                        <i data-feather="chevron-right"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
-        <section id="about" class="content-section">
-            <div class="container" data-aos="fade-up">
-                <h2>About Our Firm</h2>
-                <p class="section-intro">Founded on the principles of unwavering dedication and legal excellence, Nemukula Attorneys Inc. provides comprehensive legal services to individuals and businesses. We believe in building strong client relationships based on trust and transparency, ensuring you are guided and supported through every step of the legal process.</p>
-            </div>
-        </section>
-
-        <section id="services" class="content-section">
+        <section id="about" class="about-section-background" data-aos="fade-up">
             <div class="container">
                 <div class="section-header" data-aos="fade-up">
-                    <h2>Our Practice Areas</h2>
-                    <p class="section-intro">Explore our comprehensive legal services designed to meet your needs with expertise and dedication.</p>
+                    <h2>About Our Firm</h2>
+                </div>
+                <div class="section-content animate-scaleIn" data-aos="fade-up" data-aos-delay="200">
+                    <p class="section-intro">Founded on the principles of unwavering dedication and legal excellence, Nemukula Attorneys Inc. provides comprehensive legal services to individuals and businesses. We believe in building strong client relationships based on trust and transparency, ensuring you are guided and supported through every step of the legal process.</p>
+                    <div class="values-grid">
+                        <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+                            <i data-feather="shield"></i>
+                            <h3>Justice</h3>
+                            <p>Committed to upholding justice and protecting your rights</p>
+                        </div>
+                        <div class="value-card" data-aos="fade-up" data-aos-delay="400">
+                            <i data-feather="check-circle"></i>
+                            <h3>Integrity</h3>
+                            <p>Operating with unwavering ethical standards and transparency</p>
+                        </div>
+                        <div class="value-card" data-aos="fade-up" data-aos-delay="500">
+                            <i data-feather="award"></i>
+                            <h3>Excellence</h3>
+                            <p>Delivering superior legal services and results</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="content-section expertise-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Our Areas of Expertise</h2>
+                    <p class="section-intro">With decades of combined experience, our team provides expert legal counsel across a wide range of practice areas. We are committed to delivering exceptional results while maintaining the highest standards of professional integrity.</p>
                 </div>
                 <div class="services-grid">
                     <div class="service-card animate-scaleIn" data-aos="fade-up" data-aos-delay="100">
@@ -140,24 +163,6 @@
                         <h3><span class="practice-number">4.</span> Mining Law</h3>
                         <p>Handling mining rights, mineral regulations, environmental compliance, and mining-related legal matters.</p>
                     </div>
-                    
-                    <div class="service-card animate-scaleIn" data-aos="fade-up" data-aos-delay="300">
-                        <div class="service-icon"><i data-feather="shield"></i></div>
-                        <h3><span class="practice-number">5.</span> Criminal Law</h3>
-                        <p>Vigorous defense for our clients, protecting your rights at every stage, from bail applications to court appearances.</p>
-                    </div>
-                    
-                    <div class="service-card animate-scaleIn" data-aos="fade-up" data-aos-delay="350">
-                        <div class="service-icon"><i data-feather="trending-up"></i></div>
-                        <h3><span class="practice-number">6.</span> Litigation & Dispute Resolution</h3>
-                        <p>Representing clients in civil and commercial disputes with strategic and effective advocacy.</p>
-                    </div>
-                    
-                    <div class="service-card animate-scaleIn" data-aos="fade-up" data-aos-delay="400">
-                        <div class="service-icon"><i data-feather="archive"></i></div>
-                        <h3><span class="practice-number">7.</span> Estate Planning & Administration</h3>
-                        <p>Helping you secure your family's future with wills, trusts, and comprehensive estate administration.</p>
-                    </div>
                 </div>
                 <div class="text-center" data-aos="fade-up" data-aos-delay="450" style="margin-top: 2rem;">
                     <a href="practice-areas.html" class="btn btn-primary">View All Practice Areas <i data-feather="arrow-right"></i></a>
@@ -166,61 +171,104 @@
         </section>
 
         <section id="team" class="content-section">
-            <div class="container" data-aos="fade-up">
-                <h2>Meet Our Team</h2>
-                 <div class="team-grid">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Meet Our Team</h2>
+                    <p class="section-intro">Our dedicated legal professionals are committed to your success</p>
+                </div>
+                <div class="team-grid">
                     <div class="team-member" data-aos="fade-up" data-aos-delay="100">
-                        <img src="assets/thuso-nemukula.jpg" alt="Attorney Photo Thuso Nemukula">
+                        <img src="assets/thuso-nemukula.jpg" alt="Attorney Photo - Thuso Nemukula" loading="lazy">
                         <h4>Thuso Nemukula</h4>
-                        <p class="title">Managing Partner</p>
+                        <p class="title">Founder & Managing Partner</p>
+                        <p class="bio">Thuso Nemukula is a seasoned attorney with extensive experience in corporate and commercial law. He is dedicated to providing strategic legal solutions and achieving the best outcomes for his clients.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="content-section bg-dark">
-            <div class="container" data-aos="fade-up">
-                <h2>Contact Us</h2>
-                <div class="contact-wrapper">
-                    <div class="contact-form">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Get In Touch</h2>
+                    <p class="section-intro">We are here to help. Reach out to us for a consultation.</p>
+                </div>
+                <div class="contact-wrapper" data-aos="fade-up">
+                    <div class="contact-form" data-aos="fade-right" data-aos-delay="100">
+                        <h3>Send Us a Message</h3>
                         <form id="consultationForm" onsubmit="return sendEmail(event)">
-                            <div class="form-group">
-                                <input type="text" name="name" id="name" placeholder="Your Name" required>
+                            <div class="form-group" data-aos="fade-up" data-aos-delay="100">
+                                <label for="name" class="visually-hidden">Your Name</label>
+                                <input type="text" name="name" id="name" placeholder="Your Name" required aria-required="true">
                             </div>
-                            <div class="form-group">
-                                <input type="email" name="email" id="email" placeholder="Your Email" required>
+                            <div class="form-group" data-aos="fade-up" data-aos-delay="200">
+                                <label for="email" class="visually-hidden">Your Email</label>
+                                <input type="email" name="email" id="email" placeholder="Your Email" required aria-required="true">
                             </div>
-                            <div class="form-group">
-                                <select name="service" id="service" required>
+                            <div class="form-group" data-aos="fade-up" data-aos-delay="300">
+                                <label for="service" class="visually-hidden">Select Practice Area</label>
+                                <select name="service" id="service" required aria-required="true" title="Select Practice Area">
                                     <option value="">Select Practice Area</option>
-                                    <option value="Road Accident Fund Claims">Road Accident Fund Claims</option>
-                                    <option value="Corporate & Commercial Law">Corporate & Commercial Law</option>
+                                    <option value="RAF Claims">RAF Claims</option>
+                                    <option value="Corporate Law">Corporate Law</option>
                                     <option value="Family Law">Family Law</option>
-                                    <option value="Mining Law">Mining Law</option>
                                     <option value="Criminal Law">Criminal Law</option>
-                                    <option value="Litigation & Dispute Resolution">Litigation & Dispute Resolution</option>
-                                    <option value="Estate Planning & Administration">Estate Planning & Administration</option>
                                     <option value="Other">Other</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <textarea name="message" id="message" rows="5" placeholder="Please describe your legal matter" required></textarea>
+                            <div class="form-group" data-aos="fade-up" data-aos-delay="400">
+                                <label for="message" class="visually-hidden">Your Message</label>
+                                <textarea name="message" id="message" rows="5" placeholder="Please describe your legal matter" required aria-required="true"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Send Consultation Request</button>
+                            <button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-delay="500">
+                                <i data-feather="send"></i> Send Message
+                            </button>
                         </form>
                     </div>
-                    <div class="contact-info">
+                    <div class="contact-info" data-aos="fade-left" data-aos-delay="100">
                         <h3>Get In Touch</h3>
-                        <p>We are here to help. Reach out to us for a consultation.</p>
-                        <a href="https://wa.me/27672328339" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+                        <p class="intro-text" data-aos="fade-up" data-aos-delay="100">We are here to help. Reach out to us for a consultation.</p>
+                        
+                        <a href="https://wa.me/27672328339" class="whatsapp-button" target="_blank" rel="noopener noreferrer" data-aos="fade-up" data-aos-delay="200">
                             <i data-feather="message-circle"></i> Start WhatsApp Consultation
                         </a>
-                        <p><i data-feather="map-pin"></i> <strong>Office Address:</strong><br>34 Thwane Street, Kalafong Heights,<br>Attridgeville, 0006</p>
-                        <p><i data-feather="phone"></i> 076 573 9838</p>
-                        <p><i data-feather="phone"></i> 067 232 8339</p>
-                        <p><i data-feather="mail"></i> thuso@nemukula.co.za</p>
-                        <p><i data-feather="mail"></i> info@nemukula.co.za</p>
-                        <p><i data-feather="clock"></i> <strong>Working Hours:</strong><br>Mon - Fri: 8:00 AM - 5:00 PM<br>Sat: 9:00 AM - 1:00 PM</p>
+                        
+                        <div class="contact-details" data-aos="fade-up" data-aos-delay="300">
+                            <div class="info-item">
+                                <i data-feather="map-pin"></i>
+                                <div>
+                                    <strong>Office Address:</strong>
+                                    <p>34 Thwane Street, Kalafong Heights,<br>Attridgeville, 0006</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <i data-feather="phone"></i>
+                                <div>
+                                    <strong>Phone Numbers:</strong>
+                                    <p><a href="tel:+27765739838">076 573 9838</a></p>
+                                    <p><a href="tel:+27672328339">067 232 8339</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <i data-feather="mail"></i>
+                                <div>
+                                    <strong>Email Addresses:</strong>
+                                    <p><a href="mailto:thuso@nemukula.co.za">thuso@nemukula.co.za</a></p>
+                                    <p><a href="mailto:info@nemukula.co.za">info@nemukula.co.za</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <i data-feather="clock"></i>
+                                <div>
+                                    <strong>Working Hours:</strong>
+                                    <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                                    <p>Saturday: 9:00 AM - 1:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -229,133 +277,135 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Nemukula Attorneys Inc. All Rights Reserved.</p>
+            <div class="footer-content animate-fadeInUp">
+                <div class="footer-logo">
+                    <img src="assets/Logo.png" alt="Nemukula Attorneys Inc. Logo" loading="lazy">
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit our LinkedIn">
+                        <i data-feather="linkedin"></i>
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook">
+                        <i data-feather="facebook"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Twitter">
+                        <i data-feather="twitter"></i>
+                    </a>
+                </div>
+                <p class="copyright animate-fadeIn">&copy; 2025 Nemukula Attorneys Inc. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="/rid-nems-webie/js/script.js"></script>
-    <script src="/rid-nems-webie/js/contact-form.js"></script>
+    <script src="js/script.js"></script>
     <script>
-        // Initialize AOS with enhanced settings
+        // Initialize AOS and Feather Icons
         AOS.init({
             duration: 1000,
             once: true,
             offset: 100,
             easing: 'ease-out-cubic'
         });
-
-        // Initialize Feather Icons
         feather.replace();
 
-        // Smooth scroll handling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Parallax effect for hero section
-        window.addEventListener('scroll', () => {
-            const hero = document.querySelector('.hero-section');
-            const scrolled = window.pageYOffset;
-            hero.style.backgroundPositionY = `${scrolled * 0.5}px`;
-        });
-
-        // Progressive loading animation for service cards
-        const cards = document.querySelectorAll('.service-card');
-        const observerOptions = {
-            threshold: 0.2,
-            rootMargin: '0px'
-        };
-
-        const cardObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'scaleIn 0.6s ease forwards';
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        cards.forEach(card => {
-            cardObserver.observe(card);
-        });
-
-        // Enhanced hover effects for service icons
-        cards.forEach(card => {
-            const icon = card.querySelector('.service-icon');
-            card.addEventListener('mouseenter', () => {
-                icon.style.transform = 'rotateY(360deg)';
-            });
-            card.addEventListener('mouseleave', () => {
-                icon.style.transform = 'rotateY(0)';
-            });
-        });
-
-        // Dynamic header background
-        const header = document.querySelector('.header');
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
+        // Handle video loading
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('.hero-video');
             
-            if (currentScroll <= 0) {
-                header.classList.remove('scroll-up');
-                return;
+            // Add loading class
+            video.classList.add('loading');
+            
+            // Function to start playing the video
+            function playVideo() {
+                video.play().catch(function(error) {
+                    console.log("Video play failed:", error);
+                    // Show fallback image if video fails to play
+                    video.style.display = 'none';
+                    const fallbackImage = video.querySelector('img');
+                    if (fallbackImage) {
+                        fallbackImage.style.display = 'block';
+                    }
+                });
             }
             
-            if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
-                header.classList.remove('scroll-up');
-                header.classList.add('scroll-down');
-            } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
-                header.classList.remove('scroll-down');
-                header.classList.add('scroll-up');
-            }
+            // Remove loading class and play video when it can play
+            video.addEventListener('canplay', function() {
+                video.classList.remove('loading');
+                video.classList.add('loaded');
+                playVideo();
+            });
             
-            lastScroll = currentScroll;
-        });
-
-        // Hamburger Menu Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-
-        // Contact form animation
-        const form = document.querySelector('.contact-form form');
-        const inputs = form.querySelectorAll('input, textarea');
-
-        inputs.forEach(input => {
-            input.addEventListener('focus', () => {
-                input.parentElement.classList.add('focused');
+            // Handle video loading error
+            video.addEventListener('error', function(e) {
+                console.log("Video error:", e);
+                video.style.display = 'none';
+                const fallbackImage = video.querySelector('img');
+                if (fallbackImage) {
+                    fallbackImage.style.display = 'block';
+                }
             });
 
-            input.addEventListener('blur', () => {
-                if (!input.value) {
-                    input.parentElement.classList.remove('focused');
+            // Retry playing if the video gets paused
+            video.addEventListener('pause', function() {
+                if (!video.ended) {
+                    playVideo();
                 }
             });
         });
+
+        // Enhanced card animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.service-card');
+            
+            // Intersection Observer for cards
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-scaleIn');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: '0px'
+            });
+
+            cards.forEach(card => {
+                observer.observe(card);
+                
+                // Add hover animation for icons
+                const icon = card.querySelector('.service-icon');
+                card.addEventListener('mouseenter', () => {
+                    icon.style.transform = 'rotateY(360deg)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    icon.style.transform = 'rotateY(0)';
+                });
+            });
+        });
+
+        // Form submission handler
+        function sendEmail(event) {
+            event.preventDefault();
+            const form = event.target;
+            const name = form.querySelector('#name').value;
+            const email = form.querySelector('#email').value;
+            const service = form.querySelector('#service').value;
+            const message = form.querySelector('#message').value;
+
+            const subject = `Consultation Request from ${name} - ${service}`;
+            const body = `Name: ${name}\nEmail: ${email}\nService: ${service}\n\nMessage:\n${message}`;
+
+            window.location.href = `mailto:thuso@nemukula.co.za,info@nemukula.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            alert('Thank you for your request. Your email client should now open.');
+            form.reset();
+            return false;
+        }
     </script>
 </body>
 </html>
