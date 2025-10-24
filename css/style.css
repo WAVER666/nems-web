@@ -691,7 +691,7 @@ img {
 }
 
 .header {
-    background: var(--color-primary);
+    background: #691121;
     color: var(--color-text-light);
     padding: var(--spacing-unit) 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -1115,7 +1115,7 @@ img {
         top: 80px;
         left: 0;
         right: 0;
-        background: var(--color-primary);
+        background: #691121;
         flex-direction: column;
         padding: var(--spacing-base);
         gap: var(--spacing-base);
@@ -1176,7 +1176,10 @@ img {
 
     @media (max-width: 768px) {
         .logo-text {
-            display: none;
+            display: block;
+            font-size: 1rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
     }
 
