@@ -4,11 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legal Insights Blog - Nemukula Attorneys Inc.</title>
+    <meta name="description" content="Legal insights and analysis on South African law, family law, constitutional law, and more.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .blog-container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+
+        .blog-article {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .blog-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+        }
+
+        .blog-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 0 0 1rem 0;
+            line-height: 1.2;
+            font-family: 'Lora', serif;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.95rem;
+            opacity: 0.9;
+            flex-wrap: wrap;
+        }
+
+        .blog-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-content {
+            padding: 2.5rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .blog-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem 0;
+            color: #1a1a1a;
+            font-family: 'Lora', serif;
+        }
+
+        .blog-content h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.8rem 0;
+            color: #2d2d2d;
+        }
+
+        .blog-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .blog-content ul,
+        .blog-content ol {
+            margin: 1.2rem 0;
+            padding-left: 2rem;
+        }
+
+        .blog-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .blog-divider {
+            margin: 2rem 0;
+            border: none;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .blog-cta {
+            background: #f8f8f8;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 4px solid #c41e3a;
+            margin-top: 2rem;
+        }
+
+        .blog-cta h3 {
+            margin-top: 0;
+            color: #c41e3a;
+        }
+
+        .blog-cta p {
+            margin: 0.5rem 0;
+        }
+
+        .blog-cta a {
+            color: #c41e3a;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .blog-cta a:hover {
+            text-decoration: underline;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .blog-title {
+                font-size: 1.8rem;
+            }
+
+            .blog-header {
+                padding: 1.5rem;
+            }
+
+            .blog-content {
+                padding: 1.5rem;
+            }
+
+            .blog-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header id="header" class="header">
@@ -39,9 +178,60 @@
         <section class="page-header">
             <div class="container">
                 <h1>Legal Insights Blog</h1>
-                <p>Coming Soon</p>
+                <p>Expert Analysis on South African Law and Legal Developments</p>
             </div>
         </section>
+
+        <div class="blog-container">
+            <!-- Article: Dismantling Marital Patriarchy -->
+            <article class="blog-article" data-aos="fade-up">
+                <div class="blog-header">
+                    <h1 class="blog-title">Dismantling Marital Patriarchy: A Legal Analysis of Jordaan and Others v Minister of Home Affairs</h1>
+                    <div class="blog-meta">
+                        <div class="blog-meta-item">
+                            <span>📅</span>
+                            <span>Published: 2025</span>
+                        </div>
+                        <div class="blog-meta-item">
+                            <span>🏷️</span>
+                            <span>Family Law, Constitutional Law</span>
+                        </div>
+                        <div class="blog-meta-item">
+                            <span>⏱️</span>
+                            <span>8 min read</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-content">
+                    <h2>Introduction</h2>
+                    <p>The Constitutional Court of South Africa recently delivered a landmark judgment in <em>Jordaan and Others v Minister of Home Affairs and Another</em>. This decision significantly alters the matrimonial and family law landscape. The apex court evaluated the constitutional validity of Section 26(1)(a)–(c) of the Births and Deaths Registration Act 51 of 1992. This statutory framework historically governed the administration of spousal surnames post-marriage.</p>
+
+                    <h2>The Core Legal Issue</h2>
+                    <p>The central question before the Court was whether the statutory mechanism regulating surname changes unfairly discriminated based on gender and sex. Under the challenged provisions, a woman could automatically assume her husband's surname, retain her own, or create a double-barrelled surname upon marriage without application fees or executive approval. Conversely, men were statutorily barred from adopting or appending their wives' surnames through the same simplified administrative procedure.</p>
+
+                    <h2>Application of Constitutional Principles</h2>
+                    <p>Writing for a unanimous court, the judgment applied the two-stage discrimination test established in <em>Harksen v Lane NO</em>. The Court identified direct differentiation on the listed grounds of sex and gender. It held that this differentiation did not serve a legitimate government purpose. The state's interest in maintaining a reliable population register could not justify a system rooted in colonial and patriarchal norms.</p>
+                    
+                    <p>The Court emphasised that the statutory default position was demeaning to women. It projected an archaic narrative that a woman's legal identity is merely relational to her husband. Simultaneously, it violated men's rights to self-governance, dignity, and personal fulfillment by restricting their choices regarding identity and family ties.</p>
+
+                    <h2>The Final Ruling and Legal Impact</h2>
+                    <p>The Constitutional Court declared Section 26(1)(a)–(c) unconstitutional and invalid to the extent that it failed to afford men the same options as women. To remedy the defect, the Court ordered a 24-month suspension of invalidity to allow Parliament to enact corrective legislation and granted immediate interim relief by reading gender-neutral language into the provisions.</p>
+                    
+                    <p>Consequently, husbands can now legally assume or append their wives' surnames seamlessly at the Department of Home Affairs. This judgment permanently moves South African family law away from historical hierarchies, solidifying the constitutional understanding of marriage as an equal partnership built on the shared right to dignity and identity.</p>
+
+                    <hr class="blog-divider">
+
+                    <div class="blog-cta">
+                        <h3>Need Expert Matrimonial or Family Law Guidance?</h3>
+                        <p>At Nemukula Attorneys Inc., we stay at the absolute forefront of constitutional and family law developments to protect your rights and identity.</p>
+                        <p>
+                            Contact our team today at <a href="mailto:info@nemukula.co.za">info@nemukula.co.za</a> or <a href="tel:+27765739838">076 573 9838</a> to schedule a comprehensive consultation.
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
     </main>
 
     <footer class="footer">
