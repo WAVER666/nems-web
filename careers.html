@@ -48,6 +48,28 @@
             <div class="container">
                 <h2>Career Opportunities</h2>
                 <p class="section-intro">Join our dynamic team of legal professionals and contribute to our mission of delivering excellence in legal services.</p>
+
+                <!-- CV upload form -->
+                <form id="cv-form" class="cv-form" enctype="multipart/form-data">
+                    <div>
+                        <label for="name">Full Name</label><br>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email</label><br>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+                    <div>
+                        <label for="cv">Upload CV (PDF, DOC, DOCX; max 5 MB)</label><br>
+                        <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+                    </div>
+                    <div style="margin-top:12px;">
+                        <button id="submit-btn" type="submit">Submit Application</button>
+                        <span id="upload-status" style="margin-left:12px; display:none;">Uploading...</span>
+                    </div>
+                </form>
+                <div id="cv-message" style="margin-top:12px; display:none;"></div>
+
             </div>
         </section>
     </main>
@@ -86,6 +108,59 @@
                 navMenu.classList.remove('active');
             });
         });
+
+        // CV upload handling
+        (function() {
+            const form = document.getElementById('cv-form');
+            const fileInput = document.getElementById('cv');
+            const submitBtn = document.getElementById('submit-btn');
+            const status = document.getElementById('upload-status');
+            const msg = document.getElementById('cv-message');
+            const maxSize = 5 * 1024 * 1024; // 5 MB
+            const allowed = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                msg.style.display = 'none';
+                const file = fileInput.files[0];
+                if (!file) { alert('Please select a CV file.'); return; }
+                if (file.size > maxSize) { alert('File is too large. Maximum 5 MB.'); return; }
+                if (allowed.indexOf(file.type) === -1) {
+                    // Some browsers may not correctly set MIME type for .doc/.docx; allow by extension fallback
+                    const name = file.name.toLowerCase();
+                    if (!(name.endsWith('.pdf') || name.endsWith('.doc') || name.endsWith('.docx'))) {
+                        alert('Only PDF, DOC or DOCX files are allowed.');
+                        return;
+                    }
+                }
+
+                const fd = new FormData(form);
+
+                submitBtn.disabled = true;
+                status.style.display = 'inline';
+
+                try {
+                    const res = await fetch('/api/careers/upload', { method: 'POST', body: fd });
+                    if (res.ok) {
+                        msg.style.display = 'block';
+                        msg.style.color = 'green';
+                        msg.textContent = 'CV uploaded successfully. Thank you!';
+                        form.reset();
+                    } else {
+                        const text = await res.text();
+                        throw new Error(text || 'Upload failed');
+                    }
+                } catch (err) {
+                    console.error(err);
+                    msg.style.display = 'block';
+                    msg.style.color = 'red';
+                    msg.textContent = 'Upload failed: ' + (err.message || 'Server error');
+                } finally {
+                    submitBtn.disabled = false;
+                    status.style.display = 'none';
+                }
+            });
+        })();
     </script>
 </body>
 </html>
