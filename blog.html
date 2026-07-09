@@ -12,139 +12,193 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         .blog-container {
-            max-width: 900px;
+            max-width: 1400px;
             margin: 3rem auto;
             padding: 0 1rem;
         }
 
-        .blog-article {
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .blog-card {
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            margin-bottom: 3rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
         }
 
-        .blog-header {
-            padding: 2rem;
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(196, 30, 58, 0.2);
+        }
+
+        .blog-card-header {
+            padding: 1.5rem;
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: white;
-        }
-
-        .blog-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin: 0 0 1rem 0;
-            line-height: 1.2;
-            font-family: 'Lora', serif;
-        }
-
-        .blog-meta {
+            flex-grow: 1;
             display: flex;
-            gap: 1.5rem;
-            font-size: 0.95rem;
+            flex-direction: column;
+        }
+
+        .blog-card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 0 0 0.8rem 0;
+            line-height: 1.3;
+            font-family: 'Lora', serif;
+            color: #ffd700;
+        }
+
+        .blog-card-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
             opacity: 0.9;
             flex-wrap: wrap;
+            margin-bottom: 0.8rem;
         }
 
-        .blog-meta-item {
+        .blog-card-meta-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.3rem;
         }
 
-        .blog-content {
-            padding: 2.5rem;
-            line-height: 1.8;
-            color: #333;
+        .blog-card-summary {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            opacity: 0.95;
+            margin: 0;
         }
 
-        .blog-content h2 {
-            font-size: 1.5rem;
+        .blog-card-body {
+            padding: 1.5rem;
+            display: none;
+            max-height: 600px;
+            overflow-y: auto;
+            background: #f9f9f9;
+        }
+
+        .blog-card-body.active {
+            display: block;
+        }
+
+        .blog-card-body h2 {
+            font-size: 1.3rem;
             font-weight: 700;
-            margin: 2rem 0 1rem 0;
+            margin: 1.5rem 0 0.8rem 0;
             color: #1a1a1a;
             font-family: 'Lora', serif;
         }
 
-        .blog-content h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 1.5rem 0 0.8rem 0;
-            color: #2d2d2d;
+        .blog-card-body h2:first-child {
+            margin-top: 0;
         }
 
-        .blog-content p {
-            margin-bottom: 1.2rem;
+        .blog-card-body p {
+            margin-bottom: 1rem;
             text-align: justify;
+            line-height: 1.6;
+            color: #333;
         }
 
-        .blog-content ul,
-        .blog-content ol {
-            margin: 1.2rem 0;
-            padding-left: 2rem;
+        .blog-card-body ul,
+        .blog-card-body ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
         }
 
-        .blog-content li {
-            margin-bottom: 0.8rem;
+        .blog-card-body li {
+            margin-bottom: 0.5rem;
         }
 
         .blog-divider {
-            margin: 2rem 0;
+            margin: 1.5rem 0;
             border: none;
-            border-top: 2px solid #e0e0e0;
+            border-top: 1px solid #e0e0e0;
         }
 
-        .blog-cta {
-            background: #f8f8f8;
-            padding: 1.5rem;
+        .blog-card-cta {
+            background: #fff3cd;
+            padding: 1rem;
             border-radius: 6px;
             border-left: 4px solid #c41e3a;
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
-        .blog-cta h3 {
-            margin-top: 0;
+        .blog-card-cta h3 {
+            margin: 0 0 0.5rem 0;
             color: #c41e3a;
+            font-size: 1rem;
         }
 
-        .blog-cta p {
-            margin: 0.5rem 0;
+        .blog-card-cta p {
+            margin: 0.3rem 0;
+            font-size: 0.9rem;
         }
 
-        .blog-cta a {
+        .blog-card-cta a {
             color: #c41e3a;
             font-weight: 600;
             text-decoration: none;
         }
 
-        .blog-cta a:hover {
+        .blog-card-cta a:hover {
             text-decoration: underline;
         }
 
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+        .blog-card-toggle {
+            padding: 1rem 1.5rem;
+            background: #f0f0f0;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            font-weight: 600;
+            color: #c41e3a;
+            font-size: 0.9rem;
+        }
+
+        .blog-card.expanded {
+            grid-column: span 1;
+        }
+
+        .page-header {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: #ffd700;
+            font-weight: 700;
+            font-family: 'Lora', serif;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #666;
         }
 
         @media (max-width: 768px) {
-            .blog-title {
-                font-size: 1.8rem;
+            .blog-grid {
+                grid-template-columns: 1fr;
             }
 
-            .blog-header {
-                padding: 1.5rem;
+            .blog-card-title {
+                font-size: 1.2rem;
             }
 
-            .blog-content {
-                padding: 1.5rem;
-            }
-
-            .blog-meta {
-                flex-direction: column;
-                gap: 0.5rem;
+            .page-header h1 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -183,308 +237,221 @@
         </section>
 
         <div class="blog-container">
-            <!-- Article: Overhauling the Workplace -->
-            <article class="blog-article" data-aos="fade-up">
-                <div class="blog-header">
-                    <h1 class="blog-title">Overhauling the Workplace: A Legal Analysis of the New Labour Law Amendment Bill</h1>
-                    <div class="blog-meta">
-                        <div class="blog-meta-item">
-                            <span>📅</span>
-                            <span>Published: 2025</span>
+            <div class="blog-grid">
+                <!-- Article 1: Overhauling the Workplace -->
+                <article class="blog-card" data-aos="fade-up">
+                    <div class="blog-card-header">
+                        <h2 class="blog-card-title">Overhauling the Workplace: Labour Law Amendment Bill</h2>
+                        <div class="blog-card-meta">
+                            <div class="blog-card-meta-item">📅 2025</div>
+                            <div class="blog-card-meta-item">⏱️ 9 min</div>
                         </div>
-                        <div class="blog-meta-item">
-                            <span>🏷️</span>
-                            <span>Labour Law, Employment Law, Workplace Compliance</span>
-                        </div>
-                        <div class="blog-meta-item">
-                            <span>⏱️</span>
-                            <span>9 min read</span>
+                        <p class="blog-card-summary">The Labour Law Amendment Bill introduces significant changes to retrenchment compensation and on-call work protections, fundamentally reshaping South African employment law.</p>
+                    </div>
+                    <div class="blog-card-body">
+                        <h2>Introduction</h2>
+                        <p>The statutory architecture regulating employment relations in South Africa is undergoing its most comprehensive structural transformation since the 1990s. Following the publication of Government Gazette No. 54220, the Department of Employment and Labour introduced the far-reaching Labour Law Amendment Bill. This omnibus legislation simultaneously amends key provisions within the Labour Relations Act (LRA), the Basic Conditions of Employment Act (BCEA), and the National Minimum Wage Act.</p>
+
+                        <h2>The Core Legal Issue</h2>
+                        <p>Historically, South African labor law operated under traditional, binary models of employment that struggled to address evolving economic structures. The incoming Bill directly targets two major systemic friction points: the financial burden of retrenchments on employees, and the rise of informalized, unpredictable "on-call" or "zero-hours" work arrangements.</p>
+                        
+                        <p>Under the previous statutory status quo, employers could execute large-scale retrenchments by offering a statutory minimum of only one week's remuneration per completed year of service. Concurrently, vulnerable workers in the retail, hospitality, and gig economies remained unprotected from last-minute shift cancellations and erratic earning cycles without any legislative recourse.</p>
+
+                        <h2>Application of Statutory Principles</h2>
+                        <p>The Bill completely overwrites historical compensation structures by proposing an increase in statutory minimum severance pay from one week to two weeks' remuneration per completed year of service. To manage corporate risk, a transitional mechanism ensures this increased entitlement applies prospectively to years of service commenced after the enactment date. This structural adjustment aims to provide a real socioeconomic cushion during operational retrenchments.</p>
+                        
+                        <p>Simultaneously, the Bill inserts a strict new protective framework into the BCEA explicitly governing employers with more than 10 employees utilizing on-call or erratic labor. Employers are now legally mandated to confirm key scheduling terms in writing. This includes establishing guaranteed minimum hours, specific availability windows, and reasonable notice periods for calling or canceling shifts. Crucially, if an employer cancels scheduled work without proper notice, the employee must be paid for those hours, shifting the operational risk back onto the corporate entity.</p>
+
+                        <h2>The Legal Impact and Compliance Mandate</h2>
+                        <p>This impending legislative overhaul signals a rigorous turn toward aggressive workplace compliance. Corporate employers must immediately review their operational models, retrenchment planning, and flexible staffing policies: restructuring initiatives must now factor in significantly higher statutory exit costs. Furthermore, standard freelance, gig, and part-time agreements must be actively rewritten to prevent severe non-compliance penalties under the new on-call regulations.</p>
+                        
+                        <p>This Bill permanently changes workplace dynamics, cementing the principle that flexible labor cannot be maintained at the absolute expense of basic worker dignity and predictability.</p>
+
+                        <hr class="blog-divider">
+
+                        <div class="blog-card-cta">
+                            <h3>Are Your Workplace Contracts Compliant?</h3>
+                            <p>Contact our team at <a href="mailto:info@nemukula.co.za">info@nemukula.co.za</a> or <a href="tel:+27765739838">076 573 9838</a></p>
                         </div>
                     </div>
-                </div>
+                    <div class="blog-card-toggle">+ Expand Article</div>
+                </article>
 
-                <div class="blog-content">
-                    <h2>Introduction</h2>
-                    <p>The statutory architecture regulating employment relations in South Africa is undergoing its most comprehensive structural transformation since the 1990s. Following the publication of Government Gazette No. 54220, the Department of Employment and Labour introduced the far-reaching Labour Law Amendment Bill. This omnibus legislation simultaneously amends key provisions within the Labour Relations Act (LRA), the Basic Conditions of Employment Act (BCEA), and the National Minimum Wage Act.</p>
-
-                    <h2>The Core Legal Issue</h2>
-                    <p>Historically, South African labor law operated under traditional, binary models of employment that struggled to address evolving economic structures. The incoming Bill directly targets two major systemic friction points: the financial burden of retrenchments on employees, and the rise of informalized, unpredictable "on-call" or "zero-hours" work arrangements.</p>
-                    
-                    <p>Under the previous statutory status quo, employers could execute large-scale retrenchments by offering a statutory minimum of only one week's remuneration per completed year of service. Concurrently, vulnerable workers in the retail, hospitality, and gig economies remained unprotected from last-minute shift cancellations and erratic earning cycles without any legislative recourse.</p>
-
-                    <h2>Application of Statutory Principles</h2>
-                    <p>The Bill completely overwrites historical compensation structures by proposing an increase in statutory minimum severance pay from one week to two weeks' remuneration per completed year of service. To manage corporate risk, a transitional mechanism ensures this increased entitlement applies prospectively to years of service commenced after the enactment date. This structural adjustment aims to provide a real socioeconomic cushion during operational retrenchments.</p>
-                    
-                    <p>Simultaneously, the Bill inserts a strict new protective framework into the BCEA explicitly governing employers with more than 10 employees utilizing on-call or erratic labor. Employers are now legally mandated to confirm key scheduling terms in writing. This includes establishing guaranteed minimum hours, specific availability windows, and reasonable notice periods for calling or canceling shifts. Crucially, if an employer cancels scheduled work without proper notice, the employee must be paid for those hours, shifting the operational risk back onto the corporate entity.</p>
-
-                    <h2>The Legal Impact and Compliance Mandate</h2>
-                    <p>This impending legislative overhaul signals a rigorous turn toward aggressive workplace compliance. Corporate employers must immediately review their operational models, retrenchment planning, and flexible staffing policies: restructuring initiatives must now factor in significantly higher statutory exit costs. Furthermore, standard freelance, gig, and part-time agreements must be actively rewritten to prevent severe non-compliance penalties under the new on-call regulations.</p>
-                    
-                    <p>This Bill permanently changes workplace dynamics, cementing the principle that flexible labor cannot be maintained at the absolute expense of basic worker dignity and predictability.</p>
-
-                    <hr class="blog-divider">
-
-                    <div class="blog-cta">
-                        <h3>Are Your Workplace Contracts and Restructuring Plans Legally Compliant?</h3>
-                        <p>At Nemukula Attorneys Inc., we provide authoritative labor and employment law advice to help businesses navigate major legislative overhauls smoothly, adjust staffing models, and minimize compliance liability.</p>
-                        <p>
-                            Contact our team today at <a href="mailto:info@nemukula.co.za">info@nemukula.co.za</a> or <a href="tel:+27765739838">076 573 9838</a> to schedule a comprehensive consultation.
-                        </p>
+                <!-- Article 2: The Right to Remedy -->
+                <article class="blog-card" data-aos="fade-up">
+                    <div class="blog-card-header">
+                        <h2 class="blog-card-title">The Right to Remedy: Road Accident Fund Ruling</h2>
+                        <div class="blog-card-meta">
+                            <div class="blog-card-meta-item">📅 2025</div>
+                            <div class="blog-card-meta-item">⏱️ 8 min</div>
+                        </div>
+                        <p class="blog-card-summary">The SCA invalidates the RAF's unlawful 2022 claim rejection criteria, forcing retroactive reopening of hundreds of thousands of claims and protecting victims against prescription deadlines.</p>
                     </div>
-                </div>
-            </article>
+                    <div class="blog-card-body">
+                        <h2>Introduction</h2>
+                        <p>The Supreme Court of Appeal (SCA) of South Africa recently handed down a monumental judgment that fundamentally impacts personal injury law and public fund administration. In a consolidated matter challenging the state entity's internal directives, the SCA evaluated the legality of the 2022 RAF 1 Management Claim Form and its accompanying medical preconditions. The Court's decision completely invalidates the regulatory hurdles introduced by the fund, forcing the institution to retroactively reopen hundreds of thousands of rejected claims.</p>
 
-            <!-- Article: The Right to Remedy -->
-            <article class="blog-article" data-aos="fade-up">
-                <div class="blog-header">
-                    <h1 class="blog-title">The Right to Remedy: A Legal Analysis of the SCA's Definitive Road Accident Fund Ruling</h1>
-                    <div class="blog-meta">
-                        <div class="blog-meta-item">
-                            <span>📅</span>
-                            <span>Published: 2025</span>
-                        </div>
-                        <div class="blog-meta-item">
-                            <span>🏷️</span>
-                            <span>Personal Injury Law, Road Accident Fund, Administrative Law</span>
-                        </div>
-                        <div class="blog-meta-item">
-                            <span>⏱️</span>
-                            <span>8 min read</span>
+                        <h2>The Core Legal Issue</h2>
+                        <p>The central dispute emerged when the Road Accident Fund amended its administrative criteria to reject claims that did not immediately attach extensive, costly medico-legal reports and police documentation at the threshold phase. Under these rigid 2022 regulations, vulnerable road crash victims who lacked the financial means to independently procure specialist medical assessments had their initial claim submissions flatly rejected. The primary legal issue was whether an administrative organ could utilize its internal rule-making powers to restrict, filter, or alter the statutory right to compensation explicitly provided by the Road Accident Fund Act 56 of 1996.</p>
+
+                        <h2>Application of Statutory Principles</h2>
+                        <p>Writing for the Court, the SCA reaffirmed that internal management forms and administrative notices cannot override primary legislation. The Court emphasized that the fundamental purpose of the RAF Act is to offer the widest possible social protection to motor vehicle accident victims.</p>
+                        
+                        <p>By forcing claimants to bypass heavy financial and bureaucratic blockades just to get their files lodged, the RAF acted ultra vires (beyond its legal powers). The SCA held that procedural mechanisms must facilitate access to justice rather than serving as structural safety valves to keep legitimate liabilities off the fund's financial books.</p>
+
+                        <h2>The Legal Impact and Compliance Mandate</h2>
+                        <p>The legal implications of this ruling are massive for practitioners and claimants alike: the RAF is ordered to reinstate, backdate, and formally assess all claims rejected under the unlawful 2022 criteria. Furthermore, claims that were blocked by these unlawful requirements are protected against prescription deadlines.</p>
+                        
+                        <p>The legal environment now reverts back to the flexible compliance standards of the original 2008 regulatory framework. This ruling serves as a stark reminder that state entities cannot build administrative walls to evade their statutory obligations to the South African public.</p>
+
+                        <hr class="blog-divider">
+
+                        <div class="blog-card-cta">
+                            <h3>Unlawfully Rejected RAF Claim?</h3>
+                            <p>Contact our team at <a href="mailto:info@nemukula.co.za">info@nemukula.co.za</a> or <a href="tel:+27765739838">076 573 9838</a></p>
                         </div>
                     </div>
-                </div>
+                    <div class="blog-card-toggle">+ Expand Article</div>
+                </article>
 
-                <div class="blog-content">
-                    <h2>Introduction</h2>
-                    <p>The Supreme Court of Appeal (SCA) of South Africa recently handed down a monumental judgment that fundamentally impacts personal injury law and public fund administration. In a consolidated matter challenging the state entity's internal directives, the SCA evaluated the legality of the 2022 RAF 1 Management Claim Form and its accompanying medical preconditions. The Court's decision completely invalidates the regulatory hurdles introduced by the fund, forcing the institution to retroactively reopen hundreds of thousands of rejected claims.</p>
-
-                    <h2>The Core Legal Issue</h2>
-                    <p>The central dispute emerged when the Road Accident Fund amended its administrative criteria to reject claims that did not immediately attach extensive, costly medico-legal reports and police documentation at the threshold phase. Under these rigid 2022 regulations, vulnerable road crash victims who lacked the financial means to independently procure specialist medical assessments had their initial claim submissions flatly rejected. The primary legal issue was whether an administrative organ could utilize its internal rule-making powers to restrict, filter, or alter the statutory right to compensation explicitly provided by the Road Accident Fund Act 56 of 1996.</p>
-
-                    <h2>Application of Statutory Principles</h2>
-                    <p>Writing for the Court, the SCA reaffirmed that internal management forms and administrative notices cannot override primary legislation. The Court emphasized that the fundamental purpose of the RAF Act is to offer the widest possible social protection to motor vehicle accident victims.</p>
-                    
-                    <p>By forcing claimants to bypass heavy financial and bureaucratic blockades just to get their files lodged, the RAF acted ultra vires (beyond its legal powers). The SCA held that procedural mechanisms must facilitate access to justice rather than serving as structural safety valves to keep legitimate liabilities off the fund's financial books.</p>
-
-                    <h2>The Legal Impact and Compliance Mandate</h2>
-                    <p>The legal implications of this ruling are massive for practitioners and claimants alike: the RAF is ordered to reinstate, backdate, and formally assess all claims rejected under the unlawful 2022 criteria. Furthermore, claims that were blocked by these unlawful requirements are protected against prescription deadlines.</p>
-                    
-                    <p>The legal environment now reverts back to the flexible compliance standards of the original 2008 regulatory framework. This ruling serves as a stark reminder that state entities cannot build administrative walls to evade their statutory obligations to the South African public.</p>
-
-                    <hr class="blog-divider">
-
-                    <div class="blog-cta">
-                        <h3>Unlawfully Rejected or Delayed RAF Claim?</h3>
-                        <p>At Nemukula Attorneys Inc., we match unyielding litigation experience with up-to-the-minute jurisprudence to unlock your claim, navigate complex statutory blockades, and secure the full compensation you deserve.</p>
-                        <p>
-                            Contact our team today at <a href="mailto:info@nemukula.co.za">info@nemukula.co.za</a> or <a href="tel:+27765739838">076 573 9838</a> to schedule a comprehensive consultation.
-                        </p>
+                <!-- Article 3: Absolute Liability Underground -->
+                <article class="blog-card" data-aos="fade-up">
+                    <div class="blog-card-header">
+                        <h2 class="blog-card-title">Absolute Liability Underground: Mine Safety Obligations</h2>
+                        <div class="blog-card-meta">
+                            <div class="blog-card-meta-item">📅 2025</div>
+                            <div class="blog-card-meta-item">⏱️ 8 min</div>
+                        </div>
+                        <p class="blog-card-summary">The Labour Court establishes that operational failures to enforce underground safety standards constitute dismissible breaches of trust, prioritizing safety over accident occurrence.</p>
                     </div>
-                </div>
-            </article>
+                    <div class="blog-card-body">
+                        <h2>Introduction</h2>
+                        <p>The Labour Court of South Africa recently issued a crucial decision enforcing the strict nature of statutory duties within the extraction sector. In a key judgment involving health and safety protocols, the Court evaluated the limits of executive accountability under the Mine Health and Safety Act 29 of 1996 (MHSA). The decision establishes that an operational failure by a senior mine manager to enforce underground safety standards constitutes a material breakdown of trust, justifying absolute dismissal.</p>
 
-            <!-- Article: Absolute Liability Underground -->
-            <article class="blog-article" data-aos="fade-up">
-                <div class="blog-header">
-                    <h1 class="blog-title">Absolute Liability Underground: A Legal Analysis of Executive Mine Safety Obligations</h1>
-                    <div class="blog-meta">
-                        <div class="blog-meta-item">
-                            <span>📅</span>
-                            <span>Published: 2025</span>
-                        </div>
-                        <div class="blog-meta-item">
-                            <span>🏷️</span>
-                            <span>Labour Law, Mine Health and Safety Act, Employment Law</span>
-                        </div>
-                        <div class="blog-meta-item">
-                            <span>⏱️</span>
-                            <span>8 min read</span>
+                        <h2>The Core Legal Issue</h2>
+                        <p>The central issue before the Court was whether a senior mine manager could escape liability for systemic underground compliance failures if no immediate injury or fatality occurred. Historically, corporate entities and operational directors occasionally treated certain MHSA rules as broad, "outcome-based" guidelines rather than rigid, day-to-day mandates.</p>
+                        
+                        <p>In this dispute, a senior manager challenged their dismissal after inspectors from the Department of Mineral and Petroleum Resources flagged numerous underground safety contraventions. The employee argued that the absence of a catastrophic accident rendered immediate termination substantively unfair, pushing for reinstatement on the basis of a clean prior record.</p>
+
+                        <h2>Application of Statutory Principles</h2>
+                        <p>The Court thoroughly rejected the manager's arguments. It held that the primary purpose of the MHSA is preventative rather than reactionary. Under Section 2 and Section 7 of the MHSA, employers and designated managers carry a non-delegable duty to maintain a safe working environment underground.</p>
+                        
+                        <p>The judge clarified that showing indifference toward underground safety risks creates a severe, continuous operational risk. The Court ruled that an employer is not legally obligated to wait for a disaster to occur before taking strict disciplinary action. A manager's continuous failure to police daily safety measures directly destroys the essential bond of trust required to maintain a secure underground operation.</p>
+
+                        <h2>The Legal Impact and Compliance Mandate</h2>
+                        <p>This judgment permanently strengthens the enforcement powers of corporate employers and the state regulator. The legal consequences are clear: senior personnel cannot delegate their statutory oversight duties or ignore minor underground compliance infractions. Furthermore, mining houses possess full legal backing to immediately remove and dismiss officials who fail to maintain strict adherence to safety codes.</p>
+                        
+                        <p>This precedent confirms that underground safety compliance must be prioritized above all else. It signals to the entire South African mining industry that operational indifference is a clear legal liability that will not be tolerated by our courts.</p>
+
+                        <hr class="blog-divider">
+
+                        <div class="blog-card-cta">
+                            <h3>MHSA Compliance or Labour Disputes?</h3>
+                            <p>Contact our team at <a href="mailto:info@nemukula.co.za">info@nemukula.co.za</a> or <a href="tel:+27765739838">076 573 9838</a></p>
                         </div>
                     </div>
-                </div>
+                    <div class="blog-card-toggle">+ Expand Article</div>
+                </article>
 
-                <div class="blog-content">
-                    <h2>Introduction</h2>
-                    <p>The Labour Court of South Africa recently issued a crucial decision enforcing the strict nature of statutory duties within the extraction sector. In a key judgment involving health and safety protocols, the Court evaluated the limits of executive accountability under the Mine Health and Safety Act 29 of 1996 (MHSA). The decision establishes that an operational failure by a senior mine manager to enforce underground safety standards constitutes a material breakdown of trust, justifying absolute dismissal.</p>
-
-                    <h2>The Core Legal Issue</h2>
-                    <p>The central issue before the Court was whether a senior mine manager could escape liability for systemic underground compliance failures if no immediate injury or fatality occurred. Historically, corporate entities and operational directors occasionally treated certain MHSA rules as broad, "outcome-based" guidelines rather than rigid, day-to-day mandates.</p>
-                    
-                    <p>In this dispute, a senior manager challenged their dismissal after inspectors from the Department of Mineral and Petroleum Resources flagged numerous underground safety contraventions. The employee argued that the absence of a catastrophic accident rendered immediate termination substantively unfair, pushing for reinstatement on the basis of a clean prior record.</p>
-
-                    <h2>Application of Statutory Principles</h2>
-                    <p>The Court thoroughly rejected the manager's arguments. It held that the primary purpose of the MHSA is preventative rather than reactionary. Under Section 2 and Section 7 of the MHSA, employers and designated managers carry a non-delegable duty to maintain a safe working environment underground.</p>
-                    
-                    <p>The judge clarified that showing indifference toward underground safety risks creates a severe, continuous operational risk. The Court ruled that an employer is not legally obligated to wait for a disaster to occur before taking strict disciplinary action. A manager's continuous failure to police daily safety measures directly destroys the essential bond of trust required to maintain a secure underground operation.</p>
-
-                    <h2>The Legal Impact and Compliance Mandate</h2>
-                    <p>This judgment permanently strengthens the enforcement powers of corporate employers and the state regulator. The legal consequences are clear: senior personnel cannot delegate their statutory oversight duties or ignore minor underground compliance infractions. Furthermore, mining houses possess full legal backing to immediately remove and dismiss officials who fail to maintain strict adherence to safety codes.</p>
-                    
-                    <p>This precedent confirms that underground safety compliance must be prioritized above all else. It signals to the entire South African mining industry that operational indifference is a clear legal liability that will not be tolerated by our courts.</p>
-
-                    <hr class="blog-divider">
-
-                    <div class="blog-cta">
-                        <h3>Need Expert Guidance on Mine Health and Safety Act (MHSA) Compliance or Labour Disputes?</h3>
-                        <p>At Nemukula Attorneys Inc., we provide robust administrative and statutory counsel to protect your corporate operations, ensure absolute regulatory compliance, and handle complex employment law disputes.</p>
-                        <p>
-                            Contact our team today at <a href="mailto:info@nemukula.co.za">info@nemukula.co.za</a> or <a href="tel:+27765739838">076 573 9838</a> to schedule a comprehensive consultation.
-                        </p>
+                <!-- Article 4: The Mandate for Spatial Justice -->
+                <article class="blog-card" data-aos="fade-up">
+                    <div class="blog-card-header">
+                        <h2 class="blog-card-title">The Mandate for Spatial Justice: Adonisi Ruling</h2>
+                        <div class="blog-card-meta">
+                            <div class="blog-card-meta-item">📅 2025</div>
+                            <div class="blog-card-meta-item">⏱️ 9 min</div>
+                        </div>
+                        <p class="blog-card-summary">The Constitutional Court declares the Tafelberg property sale unconstitutional, establishing that public land disposal is permanently bound to spatial justice and affordable housing mandates.</p>
                     </div>
-                </div>
-            </article>
+                    <div class="blog-card-body">
+                        <h2>Introduction</h2>
+                        <p>The Constitutional Court of South Africa recently delivered a historic judgment in <em>Adonisi and Others v Minister for Transport and Public Works, Western Cape and Others</em>. This decision drastically reshapes the intersecting landscapes of public administrative law, property law, and municipal compliance. The apex court evaluated whether provincial and local government entities violated their statutory duties by selling prime state-owned land without considering its potential for social housing.</p>
 
-            <!-- Article: The Mandate for Spatial Justice -->
-            <article class="blog-article" data-aos="fade-up">
-                <div class="blog-header">
-                    <h1 class="blog-title">The Mandate for Spatial Justice: A Legal Analysis of Adonisi v Minister for Transport and Public Works</h1>
-                    <div class="blog-meta">
-                        <div class="blog-meta-item">
-                            <span>📅</span>
-                            <span>Published: 2025</span>
-                        </div>
-                        <div class="blog-meta-item">
-                            <span>🏷️</span>
-                            <span>Administrative Law, Property Law, Constitutional Law</span>
-                        </div>
-                        <div class="blog-meta-item">
-                            <span>⏱️</span>
-                            <span>9 min read</span>
+                        <h2>The Core Legal Issue</h2>
+                        <p>The case centered on the 2015 provincial sale of the former Tafelberg School property in Sea Point, Cape Town, to a private buyer for R135 million. Housing activists and civil society movements challenged the disposal. They argued that the Western Cape Provincial Government and the City of Cape Town systematically failed their obligations under Sections 25(5) and 26 of the Constitution. The primary legal issue was whether the state is constitutionally compelled to prioritize spatial integration and affordable housing when disposing of high-value, well-located public land.</p>
+
+                        <h2>Application of Constitutional Principles</h2>
+                        <p>Writing for a unanimous court, Mhlantla J clarified the constitutional metrics used to evaluate state housing policies. The Court firmly established that geographical location is not a peripheral consideration but is integral to the "reasonableness" enquiry under Section 26 of the Constitution. High property prices and land scarcity in urban centers cannot serve as valid legal justifications for the state to evade its obligations to dismantle apartheid-era spatial planning.</p>
+
+                        <h2>The Final Ruling and Legal Impact</h2>
+                        <p>The Constitutional Court declared the sale of the Tafelberg property unconstitutional and invalid. To enforce structural compliance, the Court issued a robust supervisory interdict requiring both the Western Cape Provincial Government and the City of Cape Town to submit detailed comprehensive reports under oath to the High Court within three months, explicitly outlining concrete legislative and administrative steps being taken to provide well-located affordable housing.</p>
+
+                        <hr class="blog-divider">
+
+                        <div class="blog-card-cta">
+                            <h3>Public, Administrative, or Property Law?</h3>
+                            <p>Contact our team at <a href="mailto:info@nemukula.co.za">info@nemukula.co.za</a> or <a href="tel:+27765739838">076 573 9838</a></p>
                         </div>
                     </div>
-                </div>
+                    <div class="blog-card-toggle">+ Expand Article</div>
+                </article>
 
-                <div class="blog-content">
-                    <h2>Introduction</h2>
-                    <p>The Constitutional Court of South Africa recently delivered a historic judgment in <em>Adonisi and Others v Minister for Transport and Public Works, Western Cape and Others</em>. This decision drastically reshapes the intersecting landscapes of public administrative law, property law, and municipal compliance. The apex court evaluated whether provincial and local government entities violated their statutory duties by selling prime state-owned land without considering its potential for social housing.</p>
-
-                    <h2>The Core Legal Issue</h2>
-                    <p>The case centered on the 2015 provincial sale of the former Tafelberg School property in Sea Point, Cape Town, to a private buyer for R135 million. Housing activists and civil society movements challenged the disposal. They argued that the Western Cape Provincial Government and the City of Cape Town systematically failed their obligations under Sections 25(5) and 26 of the Constitution. The primary legal issue was whether the state is constitutionally compelled to prioritize spatial integration and affordable housing when disposing of high-value, well-located public land.</p>
-
-                    <h2>Application of Constitutional Principles</h2>
-                    <p>Writing for a unanimous court, Mhlantla J clarified the constitutional metrics used to evaluate state housing policies. The Court firmly established that geographical location is not a peripheral consideration but is integral to the "reasonableness" enquiry under Section 26 of the Constitution. High property prices and land scarcity in urban centers cannot serve as valid legal justifications for the state to evade its obligations to dismantle apartheid-era spatial planning.</p>
-                    
-                    <p>Furthermore, the Court heavily criticized the public participation process executed during the initial sale. It ruled that public consultation must be a meaningful, transparent exercise rather than a superficial "tick-box" administrative routine. The state cannot treat public property purely as commercial real estate assets to fund general revenue when pressing socioeconomic inequities remain unaddressed in city centers.</p>
-
-                    <h2>The Final Ruling and Legal Impact</h2>
-                    <p>The Constitutional Court declared the sale of the Tafelberg property unconstitutional and invalid. To enforce structural compliance, the Court issued a robust supervisory interdict:</p>
-                    
-                    <ul>
-                        <li><strong>Remedial Framework:</strong> Both the Western Cape Provincial Government and the City of Cape Town are ordered to submit a detailed comprehensive report under oath to the High Court within three months.</li>
-                        <li><strong>Strategic Mandate:</strong> The report must explicitly outline the concrete legislative and administrative steps being taken to provide well-located affordable housing to address inner-city spatial segregation.</li>
-                    </ul>
-
-                    <p>This paradigm-shifting precedent establishes that public land disposal across South Africa is permanently bound to the mandate of spatial justice.</p>
-
-                    <hr class="blog-divider">
-
-                    <div class="blog-cta">
-                        <h3>Need Expert Guidance on Public, Administrative, or Property Law?</h3>
-                        <p>At Nemukula Attorneys Inc., we track and analyze landmark structural judgments to offer our clients authoritative legal counsel on compliance, public land usage, and administrative accountability.</p>
-                        <p>
-                            Contact our team today at <a href="mailto:info@nemukula.co.za">info@nemukula.co.za</a> or <a href="tel:+27765739838">076 573 9838</a> to schedule a comprehensive consultation.
-                        </p>
+                <!-- Article 5: Human Rights Over Bureaucracy -->
+                <article class="blog-card" data-aos="fade-up">
+                    <div class="blog-card-header">
+                        <h2 class="blog-card-title">Human Rights Over Bureaucracy: Scalabrini Centre</h2>
+                        <div class="blog-card-meta">
+                            <div class="blog-card-meta-item">📅 2025</div>
+                            <div class="blog-card-meta-item">⏱️ 8 min</div>
+                        </div>
+                        <p class="blog-card-summary">The Constitutional Court invalidates restrictive asylum seeker procedural barriers, affirming that administrative efficiency cannot override human rights and the principle of non-refoulement.</p>
                     </div>
-                </div>
-            </article>
+                    <div class="blog-card-body">
+                        <h2>Introduction</h2>
+                        <p>The Constitutional Court of South Africa recently handed down a definitive judgment in <em>Scalabrini Centre of Cape Town and Another v Minister of Home Affairs and Others</em>. This decision significantly alters South Africa's immigration and administrative law landscape. The apex court evaluated the constitutional validity of restrictive procedural barriers introduced into the Refugees Act 130 of 1998, specifically clauses penalizing asylum seekers for administrative non-compliance.</p>
 
-            <!-- Article: Human Rights Over Bureaucracy -->
-            <article class="blog-article" data-aos="fade-up">
-                <div class="blog-header">
-                    <h1 class="blog-title">Human Rights Over Bureaucracy: A Legal Analysis of Scalabrini Centre v Minister of Home Affairs</h1>
-                    <div class="blog-meta">
-                        <div class="blog-meta-item">
-                            <span>📅</span>
-                            <span>Published: 2025</span>
-                        </div>
-                        <div class="blog-meta-item">
-                            <span>🏷️</span>
-                            <span>Immigration Law, Constitutional Law</span>
-                        </div>
-                        <div class="blog-meta-item">
-                            <span>⏱️</span>
-                            <span>8 min read</span>
+                        <h2>The Core Legal Issue</h2>
+                        <p>The primary question before the Court was whether the state could use statutory procedural filters to automatically block or terminate an individual's asylum seeker application. Under the challenged amendments, an application was deemed automatically "abandoned" if an applicant failed to renew their visa within a specified timeframe, or failed to show "good cause" at a refugee reception office within a strict window.</p>
+
+                        <h2>Application of Constitutional Principles</h2>
+                        <p>The Court held that the impugned provisions were arbitrary, irrational, and inconsistent with the Bill of Rights. It found that the automatic exclusions created an unjustifiable limitation on the international law principle of non-refoulement—the absolute prohibition against returning a person to a country where they face persecution or death.</p>
+
+                        <h2>The Final Ruling and Legal Impact</h2>
+                        <p>The Constitutional Court declared the restrictive provisions unconstitutional, unlawful, and invalid with retrospective effect. The legal consequences are profound: the Department of Home Affairs cannot utilize technical timeline infractions as a shortcut to deport applicants. Furthermore, individuals cannot be denied entry into the refugee protection framework solely due to irregular entries or document delays.</p>
+
+                        <hr class="blog-divider">
+
+                        <div class="blog-card-cta">
+                            <h3>Administrative or Constitutional Law?</h3>
+                            <p>Contact our team at <a href="mailto:info@nemukula.co.za">info@nemukula.co.za</a> or <a href="tel:+27765739838">076 573 9838</a></p>
                         </div>
                     </div>
-                </div>
+                    <div class="blog-card-toggle">+ Expand Article</div>
+                </article>
 
-                <div class="blog-content">
-                    <h2>Introduction</h2>
-                    <p>The Constitutional Court of South Africa recently handed down a definitive judgment in <em>Scalabrini Centre of Cape Town and Another v Minister of Home Affairs and Others</em>. This decision significantly alters South Africa's immigration and administrative law landscape. The apex court evaluated the constitutional validity of restrictive procedural barriers introduced into the Refugees Act 130 of 1998, specifically clauses penalizing asylum seekers for administrative non-compliance.</p>
-
-                    <h2>The Core Legal Issue</h2>
-                    <p>The primary question before the Court was whether the state could use statutory procedural filters to automatically block or terminate an individual's asylum seeker application. Under the challenged amendments, an application was deemed automatically "abandoned" if an applicant failed to renew their visa within a specified timeframe, or failed to show "good cause" at a refugee reception office within a strict window. This allowed immigration officers to block applicants from entering the asylum system and initiate deportation procedures without ever evaluating the underlying safety risks or merits of the claim.</p>
-
-                    <h2>Application of Constitutional Principles</h2>
-                    <p>The Court held that the impugned provisions were arbitrary, irrational, and inconsistent with the Bill of Rights. It found that the automatic exclusions created an unjustifiable limitation on the international law principle of non-refoulement—the absolute prohibition against returning a person to a country where they face persecution or death.</p>
-                    
-                    <p>The judgment clarified that administrative efficiency or backlog clearance cannot override fundamental human rights. The Court firmly rebuked the state's reliance on rigid bureaucratic penalties, emphasizing that an asylum seeker's legal status under migratory regulations cannot strip them of their inherent right to human dignity and due process.</p>
-
-                    <h2>The Final Ruling and Legal Impact</h2>
-                    <p>The Constitutional Court declared the restrictive provisions unconstitutional, unlawful, and invalid with retrospective effect. The legal consequences are profound: the Department of Home Affairs cannot utilize technical timeline infractions as a shortcut to deport applicants. Furthermore, individuals cannot be denied entry into the refugee protection framework solely due to irregular entries or document delays.</p>
-                    
-                    <p>This precedent cements the principle that administrative law must always bend to the supremacy of the Constitution. It establishes that procedural missteps can never be used by the state to escape its core humanitarian obligations.</p>
-
-                    <hr class="blog-divider">
-
-                    <div class="blog-cta">
-                        <h3>Need Expert Administrative or Constitutional Law Guidance?</h3>
-                        <p>At Nemukula Attorneys Inc., we stay at the absolute forefront of constitutional and public law developments to protect human rights and ensure state accountability.</p>
-                        <p>
-                            Contact our team today at <a href="mailto:info@nemukula.co.za">info@nemukula.co.za</a> or <a href="tel:+27765739838">076 573 9838</a> to schedule a comprehensive consultation.
-                        </p>
+                <!-- Article 6: Dismantling Marital Patriarchy -->
+                <article class="blog-card" data-aos="fade-up">
+                    <div class="blog-card-header">
+                        <h2 class="blog-card-title">Dismantling Marital Patriarchy: Jordaan Case</h2>
+                        <div class="blog-card-meta">
+                            <div class="blog-card-meta-item">📅 2025</div>
+                            <div class="blog-card-meta-item">⏱️ 8 min</div>
+                        </div>
+                        <p class="blog-card-summary">The Constitutional Court strikes down discriminatory surname laws, affirming marriage as an equal partnership and granting men the same naming rights as women.</p>
                     </div>
-                </div>
-            </article>
+                    <div class="blog-card-body">
+                        <h2>Introduction</h2>
+                        <p>The Constitutional Court of South Africa recently delivered a landmark judgment in <em>Jordaan and Others v Minister of Home Affairs and Another</em>. This decision significantly alters the matrimonial and family law landscape. The apex court evaluated the constitutional validity of Section 26(1)(a)–(c) of the Births and Deaths Registration Act 51 of 1992. This statutory framework historically governed the administration of spousal surnames post-marriage.</p>
 
-            <!-- Article: Dismantling Marital Patriarchy -->
-            <article class="blog-article" data-aos="fade-up">
-                <div class="blog-header">
-                    <h1 class="blog-title">Dismantling Marital Patriarchy: A Legal Analysis of Jordaan and Others v Minister of Home Affairs</h1>
-                    <div class="blog-meta">
-                        <div class="blog-meta-item">
-                            <span>📅</span>
-                            <span>Published: 2025</span>
-                        </div>
-                        <div class="blog-meta-item">
-                            <span>🏷️</span>
-                            <span>Family Law, Constitutional Law</span>
-                        </div>
-                        <div class="blog-meta-item">
-                            <span>⏱️</span>
-                            <span>8 min read</span>
+                        <h2>The Core Legal Issue</h2>
+                        <p>The central question before the Court was whether the statutory mechanism regulating surname changes unfairly discriminated based on gender and sex. Under the challenged provisions, a woman could automatically assume her husband's surname, retain her own, or create a double-barrelled surname upon marriage without application fees or executive approval. Conversely, men were statutorily barred from adopting or appending their wives' surnames through the same simplified administrative procedure.</p>
+
+                        <h2>Application of Constitutional Principles</h2>
+                        <p>Writing for a unanimous court, the judgment applied the two-stage discrimination test established in <em>Harksen v Lane NO</em>. The Court identified direct differentiation on the listed grounds of sex and gender. It held that this differentiation did not serve a legitimate government purpose. The state's interest in maintaining a reliable population register could not justify a system rooted in colonial and patriarchal norms.</p>
+
+                        <h2>The Final Ruling and Legal Impact</h2>
+                        <p>The Constitutional Court declared Section 26(1)(a)–(c) unconstitutional and invalid to the extent that it failed to afford men the same options as women. Consequently, husbands can now legally assume or append their wives' surnames seamlessly at the Department of Home Affairs. This judgment permanently moves South African family law away from historical hierarchies, solidifying the constitutional understanding of marriage as an equal partnership built on the shared right to dignity and identity.</p>
+
+                        <hr class="blog-divider">
+
+                        <div class="blog-card-cta">
+                            <h3>Matrimonial or Family Law?</h3>
+                            <p>Contact our team at <a href="mailto:info@nemukula.co.za">info@nemukula.co.za</a> or <a href="tel:+27765739838">076 573 9838</a></p>
                         </div>
                     </div>
-                </div>
-
-                <div class="blog-content">
-                    <h2>Introduction</h2>
-                    <p>The Constitutional Court of South Africa recently delivered a landmark judgment in <em>Jordaan and Others v Minister of Home Affairs and Another</em>. This decision significantly alters the matrimonial and family law landscape. The apex court evaluated the constitutional validity of Section 26(1)(a)–(c) of the Births and Deaths Registration Act 51 of 1992. This statutory framework historically governed the administration of spousal surnames post-marriage.</p>
-
-                    <h2>The Core Legal Issue</h2>
-                    <p>The central question before the Court was whether the statutory mechanism regulating surname changes unfairly discriminated based on gender and sex. Under the challenged provisions, a woman could automatically assume her husband's surname, retain her own, or create a double-barrelled surname upon marriage without application fees or executive approval. Conversely, men were statutorily barred from adopting or appending their wives' surnames through the same simplified administrative procedure.</p>
-
-                    <h2>Application of Constitutional Principles</h2>
-                    <p>Writing for a unanimous court, the judgment applied the two-stage discrimination test established in <em>Harksen v Lane NO</em>. The Court identified direct differentiation on the listed grounds of sex and gender. It held that this differentiation did not serve a legitimate government purpose. The state's interest in maintaining a reliable population register could not justify a system rooted in colonial and patriarchal norms.</p>
-                    
-                    <p>The Court emphasised that the statutory default position was demeaning to women. It projected an archaic narrative that a woman's legal identity is merely relational to her husband. Simultaneously, it violated men's rights to self-governance, dignity, and personal fulfillment by restricting their choices regarding identity and family ties.</p>
-
-                    <h2>The Final Ruling and Legal Impact</h2>
-                    <p>The Constitutional Court declared Section 26(1)(a)–(c) unconstitutional and invalid to the extent that it failed to afford men the same options as women. To remedy the defect, the Court ordered a 24-month suspension of invalidity to allow Parliament to enact corrective legislation and granted immediate interim relief by reading gender-neutral language into the provisions.</p>
-                    
-                    <p>Consequently, husbands can now legally assume or append their wives' surnames seamlessly at the Department of Home Affairs. This judgment permanently moves South African family law away from historical hierarchies, solidifying the constitutional understanding of marriage as an equal partnership built on the shared right to dignity and identity.</p>
-
-                    <hr class="blog-divider">
-
-                    <div class="blog-cta">
-                        <h3>Need Expert Matrimonial or Family Law Guidance?</h3>
-                        <p>At Nemukula Attorneys Inc., we stay at the absolute forefront of constitutional and family law developments to protect your rights and identity.</p>
-                        <p>
-                            Contact our team today at <a href="mailto:info@nemukula.co.za">info@nemukula.co.za</a> or <a href="tel:+27765739838">076 573 9838</a> to schedule a comprehensive consultation.
-                        </p>
-                    </div>
-                </div>
-            </article>
+                    <div class="blog-card-toggle">+ Expand Article</div>
+                </article>
+            </div>
         </div>
     </main>
 
@@ -503,6 +470,36 @@
             once: true,
         });
         feather.replace();
+
+        // Blog card toggle functionality
+        document.querySelectorAll('.blog-card-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const card = this.closest('.blog-card');
+                const body = card.querySelector('.blog-card-body');
+                
+                // Close other open cards
+                document.querySelectorAll('.blog-card').forEach(otherCard => {
+                    if (otherCard !== card) {
+                        otherCard.querySelector('.blog-card-body').classList.remove('active');
+                        otherCard.querySelector('.blog-card-toggle').textContent = '+ Expand Article';
+                    }
+                });
+                
+                // Toggle current card
+                body.classList.toggle('active');
+                this.textContent = body.classList.contains('active') ? '- Collapse Article' : '+ Expand Article';
+            });
+        });
+
+        // Allow clicking the header to expand
+        document.querySelectorAll('.blog-card-header').forEach(header => {
+            header.style.cursor = 'pointer';
+            header.addEventListener('click', function(e) {
+                const toggle = this.closest('.blog-card').querySelector('.blog-card-toggle');
+                toggle.click();
+            });
+        });
     </script>
 </body>
 </html>
