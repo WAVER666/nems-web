@@ -51,61 +51,366 @@
                     <p class="section-intro">Explore our comprehensive legal services designed to meet your needs with expertise and dedication.</p>
                 </div>
                 <div class="services-grid">
-                    <div class="service-card animate-scaleIn" data-aos="fade-up" data-aos-delay="100">
+                    <!-- 1. Third Party Claims / Road Accident Fund -->
+                    <div class="service-card service-card-expandable animate-scaleIn" data-aos="fade-up" data-aos-delay="100" id="raf-card">
                         <div class="service-icon"><i data-feather="activity"></i></div>
                         <h3><span class="practice-number">1.</span> Third Party Claims/ Road Accident Fund</h3>
                         <p>Professional assistance with Road Accident Fund claims and third party compensation cases.</p>
+                        <div class="expand-indicator">
+                            <i data-feather="chevron-down"></i>
+                        </div>
+                    </div>
+                    <div id="raf-expansion" class="service-expansion hidden">
+                        <div class="expansion-overlay"></div>
+                        <div class="expansion-content">
+                            <div class="expansion-header">
+                                <h2>Third Party Claims & Road Accident Fund</h2>
+                                <button class="close-expansion" aria-label="Close details"><i data-feather="x"></i></button>
+                            </div>
+                            <div class="expansion-body">
+                                <div class="service-description">
+                                    <h3>Expert Compensation Recovery Services</h3>
+                                    <p>Nemukula Attorneys Inc. specializes in pursuing Road Accident Fund (RAF) claims and third-party compensation cases. We maximize your recovery and protect your rights following accidents.</p>
+                                </div>
+                                <div class="services-offered">
+                                    <h4>Our Services Include</h4>
+                                    <ul class="service-list">
+                                        <li><strong>Road Accident Fund (RAF) Claims</strong> - Professional claim preparation and pursuit</li>
+                                        <li><strong>Third-Party Liability Claims</strong> - Against other parties at fault</li>
+                                        <li><strong>Injury Compensation</strong> - For personal injuries sustained in accidents</li>
+                                        <li><strong>Damage Assessment</strong> - Comprehensive evaluation of all damages</li>
+                                        <li><strong>Insurance Negotiations</strong> - Direct engagement with insurers</li>
+                                        <li><strong>Court Litigation</strong> - Full representation in civil proceedings if necessary</li>
+                                    </ul>
+                                </div>
+                                <div class="contact-cta">
+                                    <a href="contact.html" class="cta-button">Discuss Your Claim</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="service-card animate-scaleIn" data-aos="fade-up" data-aos-delay="150">
+                    <!-- 2. Corporate & Commercial Law -->
+                    <div class="service-card service-card-expandable animate-scaleIn" data-aos="fade-up" data-aos-delay="150" id="corporate-card">
                         <div class="service-icon"><i data-feather="briefcase"></i></div>
                         <h3><span class="practice-number">2.</span> Corporate & Commercial Law</h3>
                         <p>Comprehensive legal counsel for business formation, contract negotiation, mergers, acquisitions, and corporate governance.</p>
+                        <div class="expand-indicator">
+                            <i data-feather="chevron-down"></i>
+                        </div>
+                    </div>
+                    <div id="corporate-expansion" class="service-expansion hidden">
+                        <div class="expansion-overlay"></div>
+                        <div class="expansion-content">
+                            <div class="expansion-header">
+                                <h2>Corporate & Commercial Law</h2>
+                                <button class="close-expansion" aria-label="Close details"><i data-feather="x"></i></button>
+                            </div>
+                            <div class="expansion-body">
+                                <div class="service-description">
+                                    <h3>Strategic Business Legal Solutions</h3>
+                                    <p>Our corporate law team provides comprehensive legal support for businesses of all sizes, from startups to established enterprises, ensuring compliant and strategic business operations.</p>
+                                </div>
+                                <div class="services-offered">
+                                    <h4>Our Services Include</h4>
+                                    <ul class="service-list">
+                                        <li><strong>Business Formation</strong> - Entity structuring and registration</li>
+                                        <li><strong>Contract Drafting & Negotiation</strong> - Commercial agreements and terms</li>
+                                        <li><strong>Mergers & Acquisitions</strong> - M&A due diligence and transactions</li>
+                                        <li><strong>Corporate Governance</strong> - Board procedures and compliance</li>
+                                        <li><strong>Shareholder Agreements</strong> - Dispute resolution and shareholder rights</li>
+                                        <li><strong>Commercial Disputes</strong> - Business-to-business conflict resolution</li>
+                                        <li><strong>Regulatory Compliance</strong> - Industry standards and legal requirements</li>
+                                    </ul>
+                                </div>
+                                <div class="contact-cta">
+                                    <a href="contact.html" class="cta-button">Consult Our Team</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="service-card animate-scaleIn" data-aos="fade-up" data-aos-delay="200">
+                    <!-- 3. Family Law -->
+                    <div class="service-card service-card-expandable animate-scaleIn" data-aos="fade-up" data-aos-delay="200" id="family-card">
                         <div class="service-icon"><i data-feather="heart"></i></div>
                         <h3><span class="practice-number">3.</span> Family Law</h3>
                         <p>Compassionate and discreet handling of divorce, child custody, maintenance, and other family matters.</p>
+                        <div class="expand-indicator">
+                            <i data-feather="chevron-down"></i>
+                        </div>
+                    </div>
+                    <div id="family-expansion" class="service-expansion hidden">
+                        <div class="expansion-overlay"></div>
+                        <div class="expansion-content">
+                            <div class="expansion-header">
+                                <h2>Family Law</h2>
+                                <button class="close-expansion" aria-label="Close details"><i data-feather="x"></i></button>
+                            </div>
+                            <div class="expansion-body">
+                                <div class="service-description">
+                                    <h3>Compassionate Family Legal Guidance</h3>
+                                    <p>We understand that family law matters are deeply personal. Our attorneys provide sensitive, skilled representation in all family law issues with a focus on your family's wellbeing.</p>
+                                </div>
+                                <div class="services-offered">
+                                    <h4>Our Services Include</h4>
+                                    <ul class="service-list">
+                                        <li><strong>Divorce & Separation</strong> - Contested and uncontested proceedings</li>
+                                        <li><strong>Child Custody & Access</strong> - Guardianship and parental rights</li>
+                                        <li><strong>Child & Spousal Maintenance</strong> - Support agreements and enforcement</li>
+                                        <li><strong>Property Division</strong> - Equitable distribution of marital assets</li>
+                                        <li><strong>Adoption</strong> - Family expansion and legal adoption procedures</li>
+                                        <li><strong>Domestic Violence</strong> - Protection orders and legal remedies</li>
+                                        <li><strong>Mediation & Negotiation</strong> - Amicable family dispute resolution</li>
+                                    </ul>
+                                </div>
+                                <div class="contact-cta">
+                                    <a href="contact.html" class="cta-button">Seek Legal Support</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="service-card animate-scaleIn" data-aos="fade-up" data-aos-delay="250">
+                    <!-- 4. Mining Law -->
+                    <div class="service-card service-card-expandable animate-scaleIn" data-aos="fade-up" data-aos-delay="250" id="mining-card">
                         <div class="service-icon"><i data-feather="tool"></i></div>
                         <h3><span class="practice-number">4.</span> Mining Law</h3>
                         <p>Handling mining rights, mineral regulations, environmental compliance, and mining-related legal matters.</p>
+                        <div class="expand-indicator">
+                            <i data-feather="chevron-down"></i>
+                        </div>
+                    </div>
+                    <div id="mining-expansion" class="service-expansion hidden">
+                        <div class="expansion-overlay"></div>
+                        <div class="expansion-content">
+                            <div class="expansion-header">
+                                <h2>Mining Law</h2>
+                                <button class="close-expansion" aria-label="Close details"><i data-feather="x"></i></button>
+                            </div>
+                            <div class="expansion-body">
+                                <div class="service-description">
+                                    <h3>Specialized Mining Industry Expertise</h3>
+                                    <p>Our mining law specialists provide comprehensive legal guidance on all aspects of mining operations, from licensing to compliance, ensuring your operations meet all regulatory requirements.</p>
+                                </div>
+                                <div class="services-offered">
+                                    <h4>Our Services Include</h4>
+                                    <ul class="service-list">
+                                        <li><strong>Mining Rights & Licenses</strong> - Acquisition and management</li>
+                                        <li><strong>Environmental Compliance</strong> - Regulations and sustainability</li>
+                                        <li><strong>Mineral Rights</strong> - Negotiation and protection of rights</li>
+                                        <li><strong>Regulatory Compliance</strong> - Government standards and procedures</li>
+                                        <li><strong>Community Engagement</strong> - Local stakeholder relations</li>
+                                        <li><strong>Dispute Resolution</strong> - Mining-related conflicts</li>
+                                        <li><strong>Contract Review</strong> - Supply and operational agreements</li>
+                                    </ul>
+                                </div>
+                                <div class="contact-cta">
+                                    <a href="contact.html" class="cta-button">Get Expert Advice</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="service-card animate-scaleIn" data-aos="fade-up" data-aos-delay="300">
+                    <!-- 5. Criminal Law -->
+                    <div class="service-card service-card-expandable animate-scaleIn" data-aos="fade-up" data-aos-delay="300" id="criminal-card">
                         <div class="service-icon"><i data-feather="shield"></i></div>
                         <h3><span class="practice-number">5.</span> Criminal Law</h3>
                         <p>Vigorous defense for our clients, protecting your rights at every stage, from bail applications to court appearances.</p>
+                        <div class="expand-indicator">
+                            <i data-feather="chevron-down"></i>
+                        </div>
+                    </div>
+                    <div id="criminal-expansion" class="service-expansion hidden">
+                        <div class="expansion-overlay"></div>
+                        <div class="expansion-content">
+                            <div class="expansion-header">
+                                <h2>Criminal Law</h2>
+                                <button class="close-expansion" aria-label="Close details"><i data-feather="x"></i></button>
+                            </div>
+                            <div class="expansion-body">
+                                <div class="service-description">
+                                    <h3>Vigorous Criminal Defense</h3>
+                                    <p>Your rights are our priority. We provide aggressive legal defense at every stage of criminal proceedings, protecting your interests and ensuring fair treatment.</p>
+                                </div>
+                                <div class="services-offered">
+                                    <h4>Our Services Include</h4>
+                                    <ul class="service-list">
+                                        <li><strong>Bail Applications</strong> - Securing release pending trial</li>
+                                        <li><strong>Case Investigation</strong> - Thorough evidence review</li>
+                                        <li><strong>Criminal Defense</strong> - Full representation in court</li>
+                                        <li><strong>Plea Negotiations</strong> - Strategic plea agreements</li>
+                                        <li><strong>Trial Defense</strong> - Courtroom advocacy and protection</li>
+                                        <li><strong>Appeals</strong> - Post-conviction appellate representation</li>
+                                        <li><strong>Sentencing Mitigation</strong> - Advocating for lenient sentences</li>
+                                    </ul>
+                                </div>
+                                <div class="contact-cta">
+                                    <a href="contact.html" class="cta-button">Contact Immediately</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="service-card animate-scaleIn" data-aos="fade-up" data-aos-delay="350">
+                    <!-- 6. Litigation & Dispute Resolution -->
+                    <div class="service-card service-card-expandable animate-scaleIn" data-aos="fade-up" data-aos-delay="350" id="litigation-card">
                         <div class="service-icon"><i data-feather="trending-up"></i></div>
                         <h3><span class="practice-number">6.</span> Litigation & Dispute Resolution</h3>
                         <p>Representing clients in civil and commercial disputes with strategic and effective advocacy.</p>
+                        <div class="expand-indicator">
+                            <i data-feather="chevron-down"></i>
+                        </div>
+                    </div>
+                    <div id="litigation-expansion" class="service-expansion hidden">
+                        <div class="expansion-overlay"></div>
+                        <div class="expansion-content">
+                            <div class="expansion-header">
+                                <h2>Litigation & Dispute Resolution</h2>
+                                <button class="close-expansion" aria-label="Close details"><i data-feather="x"></i></button>
+                            </div>
+                            <div class="expansion-body">
+                                <div class="service-description">
+                                    <h3>Strategic Dispute Resolution</h3>
+                                    <p>Whether through negotiation, mediation, arbitration, or litigation, we employ strategic approaches to resolve disputes efficiently and effectively in your favor.</p>
+                                </div>
+                                <div class="services-offered">
+                                    <h4>Our Services Include</h4>
+                                    <ul class="service-list">
+                                        <li><strong>Civil Litigation</strong> - Complex civil dispute representation</li>
+                                        <li><strong>Commercial Disputes</strong> - B2B conflict resolution</li>
+                                        <li><strong>Mediation Services</strong> - Neutral dispute settlement</li>
+                                        <li><strong>Arbitration</strong> - Alternative dispute resolution</li>
+                                        <li><strong>Negotiation</strong> - Skilled settlement discussions</li>
+                                        <li><strong>Document Review</strong> - Comprehensive case preparation</li>
+                                        <li><strong>Court Representation</strong> - Litigation advocacy</li>
+                                    </ul>
+                                </div>
+                                <div class="contact-cta">
+                                    <a href="contact.html" class="cta-button">Resolve Your Dispute</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="service-card animate-scaleIn" data-aos="fade-up" data-aos-delay="400">
+                    <!-- 7. Estate Planning & Administration -->
+                    <div class="service-card service-card-expandable animate-scaleIn" data-aos="fade-up" data-aos-delay="400" id="estate-card">
                         <div class="service-icon"><i data-feather="archive"></i></div>
                         <h3><span class="practice-number">7.</span> Estate Planning & Administration</h3>
                         <p>Helping you secure your family's future with wills, trusts, and comprehensive estate administration.</p>
+                        <div class="expand-indicator">
+                            <i data-feather="chevron-down"></i>
+                        </div>
+                    </div>
+                    <div id="estate-expansion" class="service-expansion hidden">
+                        <div class="expansion-overlay"></div>
+                        <div class="expansion-content">
+                            <div class="expansion-header">
+                                <h2>Estate Planning & Administration</h2>
+                                <button class="close-expansion" aria-label="Close details"><i data-feather="x"></i></button>
+                            </div>
+                            <div class="expansion-body">
+                                <div class="service-description">
+                                    <h3>Secure Your Family's Future</h3>
+                                    <p>Our estate planning specialists help you create comprehensive plans that protect your assets, provide for your loved ones, and ensure your wishes are honored.</p>
+                                </div>
+                                <div class="services-offered">
+                                    <h4>Our Services Include</h4>
+                                    <ul class="service-list">
+                                        <li><strong>Will Preparation</strong> - Comprehensive estate documents</li>
+                                        <li><strong>Trust Establishment</strong> - Living and testamentary trusts</li>
+                                        <li><strong>Estate Administration</strong> - Executorship guidance and support</li>
+                                        <li><strong>Asset Protection</strong> - Strategies to preserve your estate</li>
+                                        <li><strong>Tax Planning</strong> - Minimizing estate tax liability</li>
+                                        <li><strong>Probate Administration</strong> - Streamlined estate settlement</li>
+                                        <li><strong>Beneficiary Guidance</strong> - Clear inheritance documentation</li>
+                                    </ul>
+                                </div>
+                                <div class="contact-cta">
+                                    <a href="contact.html" class="cta-button">Plan Your Estate</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="service-card animate-scaleIn" data-aos="fade-up" data-aos-delay="450">
+                    <!-- 8. Insolvency Law -->
+                    <div class="service-card service-card-expandable animate-scaleIn" data-aos="fade-up" data-aos-delay="450" id="insolvency-card">
                         <div class="service-icon"><i data-feather="briefcase"></i></div>
                         <h3><span class="practice-number">8.</span> Insolvency Law</h3>
                         <p>Guidance on sequestrations, liquidations, and debt recovery proceedings.</p>
+                        <div class="expand-indicator">
+                            <i data-feather="chevron-down"></i>
+                        </div>
+                    </div>
+                    <div id="insolvency-expansion" class="service-expansion hidden">
+                        <div class="expansion-overlay"></div>
+                        <div class="expansion-content">
+                            <div class="expansion-header">
+                                <h2>Insolvency Law</h2>
+                                <button class="close-expansion" aria-label="Close details"><i data-feather="x"></i></button>
+                            </div>
+                            <div class="expansion-body">
+                                <div class="service-description">
+                                    <h3>Expert Insolvency & Debt Solutions</h3>
+                                    <p>We guide individuals and businesses through insolvency matters, providing practical solutions and protecting your rights in financial distress situations.</p>
+                                </div>
+                                <div class="services-offered">
+                                    <h4>Our Services Include</h4>
+                                    <ul class="service-list">
+                                        <li><strong>Sequestration</strong> - Personal insolvency procedures</li>
+                                        <li><strong>Liquidations</strong> - Corporate wind-down processes</li>
+                                        <li><strong>Debt Recovery</strong> - Securing payment obligations</li>
+                                        <li><strong>Creditor Rights</strong> - Claims and recovery strategies</li>
+                                        <li><strong>Restructuring</strong> - Business financial rehabilitation</li>
+                                        <li><strong>Insolvency Litigation</strong> - Court representation</li>
+                                        <li><strong>Debt Negotiation</strong> - Creditor settlement discussions</li>
+                                    </ul>
+                                </div>
+                                <div class="contact-cta">
+                                    <a href="contact.html" class="cta-button">Seek Financial Relief</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="service-card animate-scaleIn" data-aos="fade-up" data-aos-delay="500">
+                    <!-- 9. Labour Law -->
+                    <div class="service-card service-card-expandable animate-scaleIn" data-aos="fade-up" data-aos-delay="500" id="labour-card">
                         <div class="service-icon"><i data-feather="users"></i></div>
                         <h3><span class="practice-number">9.</span> Labour Law</h3>
                         <p>Advising on employment contracts, unfair dismissals, and dispute resolution.</p>
+                        <div class="expand-indicator">
+                            <i data-feather="chevron-down"></i>
+                        </div>
+                    </div>
+                    <div id="labour-expansion" class="service-expansion hidden">
+                        <div class="expansion-overlay"></div>
+                        <div class="expansion-content">
+                            <div class="expansion-header">
+                                <h2>Labour Law</h2>
+                                <button class="close-expansion" aria-label="Close details"><i data-feather="x"></i></button>
+                            </div>
+                            <div class="expansion-body">
+                                <div class="service-description">
+                                    <h3>Comprehensive Employment Legal Services</h3>
+                                    <p>Whether you're an employer or employee, we provide expert guidance on all employment matters, from contracts to disputes, ensuring compliance with labour laws.</p>
+                                </div>
+                                <div class="services-offered">
+                                    <h4>Our Services Include</h4>
+                                    <ul class="service-list">
+                                        <li><strong>Employment Contracts</strong> - Drafting and negotiation</li>
+                                        <li><strong>Unfair Dismissal Claims</strong> - Employee rights protection</li>
+                                        <li><strong>Disciplinary Procedures</strong> - Compliant workplace processes</li>
+                                        <li><strong>Severance & Retrenchment</strong> - Lawful employment termination</li>
+                                        <li><strong>Workplace Disputes</strong> - Conflict resolution and arbitration</li>
+                                        <li><strong>Skills Development</strong> - Training and development compliance</li>
+                                        <li><strong>BEE & Employment Equity</strong> - Regulatory compliance</li>
+                                    </ul>
+                                </div>
+                                <div class="contact-cta">
+                                    <a href="contact.html" class="cta-button">Employment Support</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
-                    <!-- Immigration Law Practice Area - Clickable/Expandable -->
+                    <!-- 10. Immigration Law -->
                     <div class="service-card service-card-expandable animate-scaleIn" data-aos="fade-up" data-aos-delay="550" id="immigration-card">
                         <div class="service-icon"><i data-feather="globe"></i></div>
                         <h3><span class="practice-number">10.</span> Immigration Law</h3>
@@ -114,100 +419,75 @@
                             <i data-feather="chevron-down"></i>
                         </div>
                     </div>
-
-                    <!-- Immigration Law Expanded Details -->
-                    <div id="immigration-expansion" class="immigration-expansion hidden">
+                    <div id="immigration-expansion" class="service-expansion hidden">
+                        <div class="expansion-overlay"></div>
                         <div class="expansion-content">
                             <div class="expansion-header">
-                                <h2>Immigration Law Services</h2>
-                                <button class="close-expansion" aria-label="Close details">
-                                    <i data-feather="x"></i>
-                                </button>
+                                <h2>Immigration Law</h2>
+                                <button class="close-expansion" aria-label="Close details"><i data-feather="x"></i></button>
                             </div>
-                            
                             <div class="expansion-body">
                                 <div class="service-description">
                                     <h3>Comprehensive Immigration Support</h3>
-                                    <p>At Nemukula Attorneys Inc., we provide expert legal guidance on all aspects of immigration law. Whether you're seeking to relocate, establish residency, or navigate complex immigration matters, our team of experienced immigration attorneys is committed to protecting your interests and ensuring compliance with all applicable regulations.</p>
+                                    <p>We provide expert legal guidance on all aspects of immigration law. Whether you're seeking to relocate, establish residency, or navigate complex immigration matters, our team is committed to protecting your interests.</p>
                                 </div>
-
                                 <div class="services-offered">
-                                    <h4>Services We Provide</h4>
-                                    <ul class="immigration-services-list">
-                                        <li>
-                                            <strong>Visa Applications & Processing</strong>
-                                            <p>Expert assistance with various visa categories including work visas, business visas, student visas, and temporary residence visas. We guide you through the entire application process with accuracy and efficiency.</p>
-                                        </li>
-                                        <li>
-                                            <strong>Residency & Permits</strong>
-                                            <p>Comprehensive support for permanent residency applications, residence permits, and permit extensions. We ensure all documentation is properly prepared and submitted in compliance with immigration requirements.</p>
-                                        </li>
-                                        <li>
-                                            <strong>Work Permits & Employment Immigration</strong>
-                                            <p>Assistance for employers seeking to hire foreign nationals and individuals requiring work authorizations. We navigate the complexities of employment-based immigration and compliance requirements.</p>
-                                        </li>
-                                        <li>
-                                            <strong>Citizenship & Naturalization</strong>
-                                            <p>Guidance through the citizenship application process, including documentation requirements, interviews, and oath ceremonies.</p>
-                                        </li>
-                                        <li>
-                                            <strong>Family-Based Immigration</strong>
-                                            <p>Support for family reunification cases, spousal sponsorships, and dependant applications. We understand the importance of keeping families together.</p>
-                                        </li>
-                                        <li>
-                                            <strong>Immigration Appeals & Disputes</strong>
-                                            <p>Representation in visa refusals, permit denials, and immigration disputes. We advocate forcefully to protect your immigration status and rights.</p>
-                                        </li>
-                                        <li>
-                                            <strong>Business Immigration & Investment</strong>
-                                            <p>Specialized services for entrepreneurs and investors seeking to establish businesses or invest in the country, including all necessary immigration documentation.</p>
-                                        </li>
-                                        <li>
-                                            <strong>Immigration Compliance</strong>
-                                            <p>Ongoing legal advice to ensure continued compliance with immigration laws, including status maintenance and renewal requirements.</p>
-                                        </li>
+                                    <h4>Our Services Include</h4>
+                                    <ul class="service-list">
+                                        <li><strong>Visa Applications & Processing</strong> - Expert application guidance</li>
+                                        <li><strong>Residency & Permits</strong> - Permanent and temporary residence</li>
+                                        <li><strong>Work Permits & Employment Immigration</strong> - Employment authorization</li>
+                                        <li><strong>Citizenship & Naturalization</strong> - Citizenship applications</li>
+                                        <li><strong>Family-Based Immigration</strong> - Family reunification support</li>
+                                        <li><strong>Immigration Appeals & Disputes</strong> - Visa refusal representation</li>
+                                        <li><strong>Business Immigration & Investment</strong> - Investor visas and business immigration</li>
                                     </ul>
                                 </div>
-
-                                <div class="attorney-expertise">
-                                    <h4>Why Choose Nemukula Attorneys for Immigration Law?</h4>
-                                    <div class="expertise-grid">
-                                        <div class="expertise-item">
-                                            <i data-feather="award"></i>
-                                            <h5>Proven Expertise</h5>
-                                            <p>Years of experience successfully handling complex immigration matters with high approval rates.</p>
-                                        </div>
-                                        <div class="expertise-item">
-                                            <i data-feather="shield-check"></i>
-                                            <h5>Legal Protection</h5>
-                                            <p>Your rights and interests are our priority. We ensure all legal protections are in place throughout the process.</p>
-                                        </div>
-                                        <div class="expertise-item">
-                                            <i data-feather="clock"></i>
-                                            <h5>Timely Processing</h5>
-                                            <p>We understand the importance of timely processing and work diligently to meet all deadlines.</p>
-                                        </div>
-                                        <div class="expertise-item">
-                                            <i data-feather="globe-2"></i>
-                                            <h5>Multilingual Support</h5>
-                                            <p>Our team can communicate in multiple languages to better serve our diverse client base.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
                                 <div class="contact-cta">
-                                    <h4>Ready to Get Started?</h4>
-                                    <p>Contact Nemukula Attorneys Inc. today to schedule a consultation with our immigration law specialists. We're here to help you achieve your immigration goals with confidence and professional expertise.</p>
                                     <a href="contact.html" class="cta-button">Schedule a Consultation</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="service-card animate-scaleIn" data-aos="fade-up" data-aos-delay="600">
+                    <!-- 11. Legal Costs & Bill Drafting -->
+                    <div class="service-card service-card-expandable animate-scaleIn" data-aos="fade-up" data-aos-delay="600" id="legal-costs-card">
                         <div class="service-icon"><i data-feather="file-text"></i></div>
                         <h3><span class="practice-number">11.</span> Legal Costs & Bill Drafting</h3>
                         <p>Expert preparation and assessment of legal bills, cost consultations, and drafting of bills of costs in line with current regulations.</p>
+                        <div class="expand-indicator">
+                            <i data-feather="chevron-down"></i>
+                        </div>
+                    </div>
+                    <div id="legal-costs-expansion" class="service-expansion hidden">
+                        <div class="expansion-overlay"></div>
+                        <div class="expansion-content">
+                            <div class="expansion-header">
+                                <h2>Legal Costs & Bill Drafting</h2>
+                                <button class="close-expansion" aria-label="Close details"><i data-feather="x"></i></button>
+                            </div>
+                            <div class="expansion-body">
+                                <div class="service-description">
+                                    <h3>Expert Cost Assessment & Billing Services</h3>
+                                    <p>Our cost specialists provide comprehensive legal billing services, ensuring accurate assessment, compliance with regulations, and fair cost recovery.</p>
+                                </div>
+                                <div class="services-offered">
+                                    <h4>Our Services Include</h4>
+                                    <ul class="service-list">
+                                        <li><strong>Bill Drafting</strong> - Compliant legal cost billing</li>
+                                        <li><strong>Legal Cost Assessment</strong> - Expert review and evaluation</li>
+                                        <li><strong>Cost Consultations</strong> - Pre-litigation cost guidance</li>
+                                        <li><strong>Taxing Officer Representation</strong> - Cost court advocacy</li>
+                                        <li><strong>Contingency Billing</strong> - Risk-based fee arrangements</li>
+                                        <li><strong>Regulatory Compliance</strong> - Current legal cost regulations</li>
+                                        <li><strong>Cost Recovery Strategy</strong> - Maximizing recoverable costs</li>
+                                    </ul>
+                                </div>
+                                <div class="contact-cta">
+                                    <a href="contact.html" class="cta-button">Cost Assessment</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -219,9 +499,6 @@
             <p>&copy; 2025 Nemukula Attorneys Inc. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <!-- Modal Overlay for Expansion -->
-    <div id="expansion-overlay" class="expansion-overlay hidden"></div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -266,41 +543,45 @@
                 });
             });
 
-            // Immigration Law Card Expansion Logic
-            const immigrationCard = document.getElementById('immigration-card');
-            const immigrationExpansion = document.getElementById('immigration-expansion');
-            const expansionOverlay = document.getElementById('expansion-overlay');
-            const closeButton = document.querySelector('.close-expansion');
+            // Service Expansion Logic for All Services
+            const serviceIds = ['raf', 'corporate', 'family', 'mining', 'criminal', 'litigation', 'estate', 'insolvency', 'labour', 'immigration', 'legal-costs'];
+            
+            serviceIds.forEach(serviceId => {
+                const cardElement = document.getElementById(`${serviceId}-card`);
+                const expansionElement = document.getElementById(`${serviceId}-expansion`);
+                
+                if (cardElement && expansionElement) {
+                    const closeButton = expansionElement.querySelector('.close-expansion');
+                    const overlay = expansionElement.querySelector('.expansion-overlay');
 
-            function openExpansion() {
-                immigrationExpansion.classList.remove('hidden');
-                expansionOverlay.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-                feather.replace();
-                setTimeout(() => {
-                    immigrationExpansion.classList.add('active');
-                    expansionOverlay.classList.add('active');
-                }, 10);
-            }
+                    function openExpansion(e) {
+                        e.stopPropagation();
+                        expansionElement.classList.remove('hidden');
+                        document.body.style.overflow = 'hidden';
+                        feather.replace();
+                        setTimeout(() => {
+                            expansionElement.classList.add('active');
+                        }, 10);
+                    }
 
-            function closeExpansion() {
-                immigrationExpansion.classList.remove('active');
-                expansionOverlay.classList.remove('active');
-                setTimeout(() => {
-                    immigrationExpansion.classList.add('hidden');
-                    expansionOverlay.classList.add('hidden');
-                    document.body.style.overflow = 'auto';
-                }, 300);
-            }
+                    function closeExpansion() {
+                        expansionElement.classList.remove('active');
+                        setTimeout(() => {
+                            expansionElement.classList.add('hidden');
+                            document.body.style.overflow = 'auto';
+                        }, 300);
+                    }
 
-            immigrationCard.addEventListener('click', openExpansion);
-            closeButton.addEventListener('click', closeExpansion);
-            expansionOverlay.addEventListener('click', closeExpansion);
+                    cardElement.addEventListener('click', openExpansion);
+                    closeButton.addEventListener('click', closeExpansion);
+                    overlay.addEventListener('click', closeExpansion);
 
-            // Close on Escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && !immigrationExpansion.classList.contains('hidden')) {
-                    closeExpansion();
+                    // Close on Escape key
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'Escape' && !expansionElement.classList.contains('hidden')) {
+                            closeExpansion();
+                        }
+                    });
                 }
             });
 
