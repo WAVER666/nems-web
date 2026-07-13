@@ -12,7 +12,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-
+ 
     <header id="header" class="header">
         <nav class="navbar container">
             <a href="index.html" class="nav-logo">
@@ -105,10 +105,103 @@
                         <p>Advising on employment contracts, unfair dismissals, and dispute resolution.</p>
                     </div>
                     
-                    <div class="service-card animate-scaleIn" data-aos="fade-up" data-aos-delay="550">
+                    <!-- Immigration Law Practice Area - Clickable/Expandable -->
+                    <div class="service-card service-card-expandable animate-scaleIn" data-aos="fade-up" data-aos-delay="550" id="immigration-card">
                         <div class="service-icon"><i data-feather="globe"></i></div>
                         <h3><span class="practice-number">10.</span> Immigration Law</h3>
                         <p>Assistance with visas, permits, and residency applications.</p>
+                        <div class="expand-indicator">
+                            <i data-feather="chevron-down"></i>
+                        </div>
+                    </div>
+
+                    <!-- Immigration Law Expanded Details -->
+                    <div id="immigration-expansion" class="immigration-expansion hidden">
+                        <div class="expansion-content">
+                            <div class="expansion-header">
+                                <h2>Immigration Law Services</h2>
+                                <button class="close-expansion" aria-label="Close details">
+                                    <i data-feather="x"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="expansion-body">
+                                <div class="service-description">
+                                    <h3>Comprehensive Immigration Support</h3>
+                                    <p>At Nemukula Attorneys Inc., we provide expert legal guidance on all aspects of immigration law. Whether you're seeking to relocate, establish residency, or navigate complex immigration matters, our team of experienced immigration attorneys is committed to protecting your interests and ensuring compliance with all applicable regulations.</p>
+                                </div>
+
+                                <div class="services-offered">
+                                    <h4>Services We Provide</h4>
+                                    <ul class="immigration-services-list">
+                                        <li>
+                                            <strong>Visa Applications & Processing</strong>
+                                            <p>Expert assistance with various visa categories including work visas, business visas, student visas, and temporary residence visas. We guide you through the entire application process with accuracy and efficiency.</p>
+                                        </li>
+                                        <li>
+                                            <strong>Residency & Permits</strong>
+                                            <p>Comprehensive support for permanent residency applications, residence permits, and permit extensions. We ensure all documentation is properly prepared and submitted in compliance with immigration requirements.</p>
+                                        </li>
+                                        <li>
+                                            <strong>Work Permits & Employment Immigration</strong>
+                                            <p>Assistance for employers seeking to hire foreign nationals and individuals requiring work authorizations. We navigate the complexities of employment-based immigration and compliance requirements.</p>
+                                        </li>
+                                        <li>
+                                            <strong>Citizenship & Naturalization</strong>
+                                            <p>Guidance through the citizenship application process, including documentation requirements, interviews, and oath ceremonies.</p>
+                                        </li>
+                                        <li>
+                                            <strong>Family-Based Immigration</strong>
+                                            <p>Support for family reunification cases, spousal sponsorships, and dependant applications. We understand the importance of keeping families together.</p>
+                                        </li>
+                                        <li>
+                                            <strong>Immigration Appeals & Disputes</strong>
+                                            <p>Representation in visa refusals, permit denials, and immigration disputes. We advocate forcefully to protect your immigration status and rights.</p>
+                                        </li>
+                                        <li>
+                                            <strong>Business Immigration & Investment</strong>
+                                            <p>Specialized services for entrepreneurs and investors seeking to establish businesses or invest in the country, including all necessary immigration documentation.</p>
+                                        </li>
+                                        <li>
+                                            <strong>Immigration Compliance</strong>
+                                            <p>Ongoing legal advice to ensure continued compliance with immigration laws, including status maintenance and renewal requirements.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="attorney-expertise">
+                                    <h4>Why Choose Nemukula Attorneys for Immigration Law?</h4>
+                                    <div class="expertise-grid">
+                                        <div class="expertise-item">
+                                            <i data-feather="award"></i>
+                                            <h5>Proven Expertise</h5>
+                                            <p>Years of experience successfully handling complex immigration matters with high approval rates.</p>
+                                        </div>
+                                        <div class="expertise-item">
+                                            <i data-feather="shield-check"></i>
+                                            <h5>Legal Protection</h5>
+                                            <p>Your rights and interests are our priority. We ensure all legal protections are in place throughout the process.</p>
+                                        </div>
+                                        <div class="expertise-item">
+                                            <i data-feather="clock"></i>
+                                            <h5>Timely Processing</h5>
+                                            <p>We understand the importance of timely processing and work diligently to meet all deadlines.</p>
+                                        </div>
+                                        <div class="expertise-item">
+                                            <i data-feather="globe-2"></i>
+                                            <h5>Multilingual Support</h5>
+                                            <p>Our team can communicate in multiple languages to better serve our diverse client base.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="contact-cta">
+                                    <h4>Ready to Get Started?</h4>
+                                    <p>Contact Nemukula Attorneys Inc. today to schedule a consultation with our immigration law specialists. We're here to help you achieve your immigration goals with confidence and professional expertise.</p>
+                                    <a href="contact.html" class="cta-button">Schedule a Consultation</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="service-card animate-scaleIn" data-aos="fade-up" data-aos-delay="600">
@@ -126,6 +219,9 @@
             <p>&copy; 2025 Nemukula Attorneys Inc. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- Modal Overlay for Expansion -->
+    <div id="expansion-overlay" class="expansion-overlay hidden"></div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -168,6 +264,44 @@
                 card.addEventListener('mouseleave', () => {
                     icon.style.transform = 'rotateY(0)';
                 });
+            });
+
+            // Immigration Law Card Expansion Logic
+            const immigrationCard = document.getElementById('immigration-card');
+            const immigrationExpansion = document.getElementById('immigration-expansion');
+            const expansionOverlay = document.getElementById('expansion-overlay');
+            const closeButton = document.querySelector('.close-expansion');
+
+            function openExpansion() {
+                immigrationExpansion.classList.remove('hidden');
+                expansionOverlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                feather.replace();
+                setTimeout(() => {
+                    immigrationExpansion.classList.add('active');
+                    expansionOverlay.classList.add('active');
+                }, 10);
+            }
+
+            function closeExpansion() {
+                immigrationExpansion.classList.remove('active');
+                expansionOverlay.classList.remove('active');
+                setTimeout(() => {
+                    immigrationExpansion.classList.add('hidden');
+                    expansionOverlay.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            }
+
+            immigrationCard.addEventListener('click', openExpansion);
+            closeButton.addEventListener('click', closeExpansion);
+            expansionOverlay.addEventListener('click', closeExpansion);
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !immigrationExpansion.classList.contains('hidden')) {
+                    closeExpansion();
+                }
             });
 
             // Smooth scroll to practice areas when clicked from navigation
