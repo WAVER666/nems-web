@@ -370,45 +370,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
-
-        // Add pull-to-refresh functionality
-        let pullStartY = 0;
-        let pullMoveY = 0;
-        const pullThreshold = 60;
-        const pullIndicator = document.createElement('div');
-        pullIndicator.className = 'pull-to-refresh';
-        document.body.prepend(pullIndicator);
-
-        document.addEventListener('touchstart', (e) => {
-            if (window.scrollY === 0) {
-                pullStartY = e.touches[0].clientY;
-            }
-        }, { passive: true });
-
-        document.addEventListener('touchmove', (e) => {
-            if (pullStartY > 0) {
-                pullMoveY = e.touches[0].clientY - pullStartY;
-                if (pullMoveY > 0) {
-                    pullIndicator.style.transform = `translateY(${Math.min(pullMoveY, pullThreshold)}px)`;
-                    if (pullMoveY >= pullThreshold) {
-                        pullIndicator.classList.add('ready');
-                    } else {
-                        pullIndicator.classList.remove('ready');
-                    }
-                }
-            }
-        }, { passive: true });
-
-        document.addEventListener('touchend', () => {
-            if (pullMoveY >= pullThreshold) {
-                // Trigger refresh
-                window.location.reload();
-            }
-            pullStartY = 0;
-            pullMoveY = 0;
-            pullIndicator.style.transform = '';
-            pullIndicator.classList.remove('ready');
-        }, { passive: true });
     });
     
     // Prevent zoom on double tap for iOS
