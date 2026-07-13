@@ -45,6 +45,47 @@
     transform: scaleX(1);
 }
 
+/* Expandable Service Card Styles */
+.service-card-expandable {
+    cursor: pointer;
+    position: relative;
+}
+
+.service-card-expandable:hover {
+    border: 2px solid var(--color-primary);
+}
+
+.expand-indicator {
+    position: absolute;
+    bottom: var(--spacing-base);
+    right: var(--spacing-base);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--color-primary-rgb), 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.service-card-expandable:hover .expand-indicator {
+    background: var(--color-primary);
+    transform: rotate(180deg);
+}
+
+.service-card-expandable:hover .expand-indicator i {
+    color: var(--color-text-light);
+    stroke-width: 3;
+}
+
+.expand-indicator i {
+    width: 18px;
+    height: 18px;
+    color: var(--color-primary);
+    transition: all 0.3s ease;
+}
+
 .service-icon {
     width: 64px;
     height: 64px;
@@ -125,6 +166,280 @@
     opacity: 1;
 }
 
+/* Immigration Expansion Modal Styles */
+.expansion-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 500;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.expansion-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.expansion-overlay.hidden {
+    display: none;
+}
+
+.immigration-expansion {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    background: var(--color-background);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    z-index: 510;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.immigration-expansion.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.immigration-expansion.hidden {
+    display: none;
+}
+
+.expansion-content {
+    padding: var(--spacing-2xl);
+}
+
+.expansion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-2xl);
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: var(--spacing-xl);
+}
+
+.expansion-header h2 {
+    color: var(--color-primary);
+    font-size: var(--font-size-3xl);
+    margin: 0;
+}
+
+.close-expansion {
+    background: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--color-primary);
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.close-expansion:hover {
+    background: rgba(var(--color-primary-rgb), 0.1);
+    transform: rotate(90deg);
+}
+
+.close-expansion i {
+    width: 24px;
+    height: 24px;
+}
+
+.expansion-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+}
+
+.service-description {
+    background: linear-gradient(135deg, 
+        rgba(var(--color-primary-rgb), 0.05) 0%,
+        rgba(var(--color-accent-rgb), 0.05) 100%
+    );
+    padding: var(--spacing-xl);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--border-radius-lg);
+}
+
+.service-description h3 {
+    color: var(--color-primary);
+    margin-top: 0;
+}
+
+.services-offered h4 {
+    color: var(--color-primary);
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-xl);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.immigration-services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.immigration-services-list li {
+    background: var(--color-background);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    border: 2px solid var(--color-border);
+    transition: all 0.3s ease;
+}
+
+.immigration-services-list li:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.15);
+    transform: translateY(-4px);
+}
+
+.immigration-services-list li strong {
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+}
+
+.immigration-services-list li p {
+    color: var(--color-text-muted);
+    margin: 0;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-loose);
+}
+
+.attorney-expertise {
+    background: var(--color-background);
+}
+
+.attorney-expertise h4 {
+    color: var(--color-primary);
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-xl);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.expertise-item {
+    text-align: center;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    background: linear-gradient(135deg, 
+        rgba(var(--color-primary-rgb), 0.05) 0%,
+        rgba(var(--color-accent-rgb), 0.05) 100%
+    );
+    transition: all 0.3s ease;
+}
+
+.expertise-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(var(--color-primary-rgb), 0.2);
+}
+
+.expertise-item i {
+    width: 48px;
+    height: 48px;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+    display: block;
+}
+
+.expertise-item h5 {
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+    margin: var(--spacing-base) 0;
+}
+
+.expertise-item p {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    margin: 0;
+}
+
+.contact-cta {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    padding: var(--spacing-2xl);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    color: var(--color-text-light);
+}
+
+.contact-cta h4 {
+    color: var(--color-text-light);
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-lg);
+}
+
+.contact-cta p {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xl);
+    opacity: 0.95;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--color-text-light);
+    color: var(--color-primary);
+    padding: var(--spacing-base) var(--spacing-2xl);
+    border-radius: var(--border-radius-lg);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:active {
+    transform: translateY(-1px);
+}
+
+/* Scrollbar styling for expansion modal */
+.immigration-expansion::-webkit-scrollbar {
+    width: 8px;
+}
+
+.immigration-expansion::-webkit-scrollbar-track {
+    background: var(--color-border);
+    border-radius: 4px;
+}
+
+.immigration-expansion::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+    border-radius: 4px;
+}
+
+.immigration-expansion::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-accent);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .services-grid {
@@ -149,6 +464,50 @@
 
     .service-card h3 {
         font-size: var(--font-size-lg);
+    }
+
+    /* Mobile expansion modal */
+    .immigration-expansion {
+        width: 95%;
+        max-height: 95vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    .expansion-content {
+        padding: var(--spacing-xl);
+    }
+
+    .expansion-header {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        align-items: flex-start;
+    }
+
+    .expansion-header h2 {
+        font-size: var(--font-size-2xl);
+    }
+
+    .close-expansion {
+        align-self: flex-end;
+    }
+
+    .immigration-services-list {
+        grid-template-columns: 1fr;
+    }
+
+    .expertise-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: var(--spacing-lg);
+    }
+
+    .contact-cta {
+        padding: var(--spacing-xl);
+    }
+
+    .contact-cta h4 {
+        font-size: var(--font-size-xl);
     }
 }
 
@@ -181,4 +540,15 @@
 
 .animate-scaleIn {
     animation: scaleIn 0.5s ease forwards;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .service-card,
+    .expansion-overlay,
+    .immigration-expansion,
+    .expand-indicator {
+        transition: none;
+        animation: none;
+    }
 }
